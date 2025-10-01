@@ -10,7 +10,7 @@ Visual Studio Code proporciona una experiencia de GitHub Copilot perfecta y pe
 
 Este ejercicio debe tardar aproximadamente **25** minutos en completarse.
 
-> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar su propia cuenta de GitHub y suscripción de GitHub Copilot. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
+> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar su propia cuenta de GitHub y suscripción de GitHub Copilot. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
 
 ## Antes de comenzar
 
@@ -19,38 +19,42 @@ El entorno de laboratorio debe incluir lo siguiente:
 - Git 2.48 o posterior
 - .NET o Python:
 
-    -  **SDK de .NET 9.0** o posterior con Visual Studio Code con la extensión **Kir de desarrollo de C#**.
+    - **SDK de .NET 9.0** o posterior con Visual Studio Code con la extensión **Kir de desarrollo de C#**.
     - **Python 3.10** o posterior con Visual Studio Code con la extensión **Python**
 
-- Una cuenta de GitHub con acciones de GitHub habilitadas.
+- Una cuenta de GitHub con acciones de GitHub Copilot habilitadas.
 
 Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
-- Para obtener ayuda a fin de configurar el equipo local como entorno de laboratorio, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Configure los recursos de entorno de laboratorio</a>.
+- Si necesita ayuda para configurar el equipo local como entorno de laboratorio, abra el vínculo siguiente en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Configuración de los recursos del entorno de laboratorio</a>.
 
-- Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
+- Si necesita ayuda para habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el vínculo siguiente en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
 Si usa un entorno de laboratorio hospedado para este ejercicio:
 
-- Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, pegue la siguiente dirección URL en la barra de navegación del sitio de un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
+- Si necesita ayuda para habilitar la suscripción de GitHub Copilot en Visual Studio Code, pegue la siguiente dirección URL en la barra de navegación del sitio de un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
-- Abra un terminal de comandos y luego ejecute los siguientes comandos:
+- Para asegurarse de que el SDK de .NET está configurado para usar el repositorio oficial de NuGet.org como origen para descargar y restaurar paquetes:
 
-    A fin de asegurarse de que Visual Studio Code está configurado para usar la versión correcta de **.NET**, ejecute el siguiente comando:
+    Abra un terminal de comandos y luego ejecute los siguientes comandos:
 
     ```bash
 
     dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
 
     ```
-    
-    o
 
-    A fin de asegurarse de que Visual Studio Code está configurado para usar la versión correcta de Python, compruebe que la instalación de Python sea la versión 3.10 o posterior:
+- Para configurar el entorno de laboratorio hospedado para Python, siga estos pasos:
 
-    ```bash
-    python --version
-    ```
+    1. Para determinar la versión de Python instalada en el entorno hospedado, ejecute el siguiente comando:
+
+        ```bash
+        python --version
+        ```
+
+        Si es necesario, siga estos pasos en la siguiente dirección URL para configurar Python en Visual Studio Code: <a href="https://code.visualstudio.com/docs/python/python-tutorial" target="_blank">Introducción a Python en VS Code</a>.
+
+    1. Para instalar la extensión, seleccione la vista Extensiones en Visual Studio Code.
 
 ## Escenario del ejercicio
 
@@ -87,7 +91,7 @@ Si desea probar las opciones de habilitar o deshabilitar, puede seleccionar la o
 
 Los valores predeterminados se configuran automáticamente al activar GitHub Copilot en Visual Studio Code. La configuración se organiza bajo la etiqueta Extensiones, que incluye la configuración para GitHub Copilot y GitHub Copilot Chat. Puede personalizar la configuración de las extensiones de GitHub Copilot mediante la pestaña de configuración de Visual Studio Code.
 
-> **SUGERENCIA**: Puede usar el menú Copilot Chat para abrir una pestaña Configuración filtrada para GitHub Copilot.
+> **SUGERENCIA**: Puede usar el menú Copilot Chat para abrir una pestaña Configuración filtrada para GitHub Copilot.
 
 Completa los siguientes pasos para usar esta sección del ejercicio:
 
@@ -113,19 +117,19 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
     La configuración de GitHub Copilot incluye las siguientes opciones:
 
-    - **GitHub.Copilot.Advanced**: Configure opciones avanzadas para GitHub Copilot en settings.json.
+    - **GitHub.Copilot.Advanced**: configure opciones avanzadas para GitHub Copilot en settings.json.
 
         Al seleccionar **Editar en settings.json** se abre el archivo settings.json, que es un archivo JSON que contiene la configuración de GitHub Copilot. La configuración se organiza en secciones y cada sección contiene una lista de opciones de configuración.
 
         ![Recorte de pantalla que muestra el archivo settings.json abierto en el editor.](./Media/m01-github-copilot-extension-settings-advanced-options.png)
 
-    - **GitHub.Copilot.Enable**: Habilitar o deshabilitar la finalización de Copilot para los lenguajes seleccionados.
+    - **GitHub.Copilot.Enable**: habilite o deshabilite las finalizaciones de Copilot para los lenguajes especificados.
 
         El término *lenguajes* se refiere a los lenguajes de programación, pero también admite otros formatos de archivo. Los lenguajes se especifican utilizando una lista de lenguajes y un valor de **true** o **false** para habilitar o deshabilitar GitHub Copilot para cada lenguaje. De forma predeterminada, GitHub Copilot está habilitado para todos los idiomas. Esta configuración se especifica con el carácter comodín **\*** en la primera fila y el valor **verdadero**. Las filas posteriores especifican los idiomas para los que GitHub Copilot está habilitado o deshabilitado. Por ejemplo, GitHub Copilot está habilitado para **C#**, **JavaScript** y **Python** y deshabilitado para **Plaintext** y **Markdown**.
 
         ![Recorte de pantalla que muestra la configuración habilitar lenguajes abierta en el editor.](./Media/m01-github-copilot-extension-settings-enable-languages.png)
 
-    - **GitHub.Copilot.SelectedCompletionModel**: Seleccione el modelo que se va a usar para las finalizaciones de Copilot.
+    - **GitHub.Copilot.SelectedCompletionModel**: seleccione el modelo que se va a usar para las finalizaciones de Copilot.
 
         Para seleccionar un modelo de finalizaciones, abra el menú Configurar finalizaciones de Copilot y, a continuación, seleccione la opción de menú **Cambiar modelo de finalizaciones**.
 
@@ -163,11 +167,11 @@ Visual Studio Code integra perfectamente las características de IA de GitHub 
 
 Las características de GitHub Copilot se alinean con las siguientes categorías:
 
-- Chat en lenguaje natural: GitHub Copilot proporciona tres interfaces de chat distintas: Vista de chat, Chat rápido y Chat insertado.
+- Chat en lenguaje natural: GitHub Copilot proporciona tres interfaces de chat distintas: Vista de chat, Chat rápido y Chat insertado.
 
-- Finalizaciones de código: GitHub Copilot se integra con el editor de código para generar sugerencias de finalización de código compatibles con el contexto a medida que escribe.
+- Finalizaciones de código: GitHub Copilot se integra con el editor de código para generar sugerencias de finalización de código compatibles con el contexto a medida que escribe.
 
-- Acciones inteligentes: GitHub Copilot automatiza las tareas comunes con acciones inteligentes para eliminar la escritura repetitiva de mensajes.
+- Acciones inteligentes: GitHub Copilot automatiza tareas comunes con acciones inteligentes para eliminar la escritura repetitiva de indicaciones.
 
 Las características de productividad de GitHub Copilot son fáciles de usar y se integran sin en el flujo de trabajo sin interrumpir la experiencia de codificación.
 
@@ -191,27 +195,27 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
     - Barra de herramientas de vista de chat: La barra de herramientas Vista de chat se encuentra en la esquina superior derecha de la vista de chat. Puede usar la barra de herramientas para administrar el historial de chat, iniciar un nuevo chat, abrir la Vista de chat en otra ubicación u ocultar la Vista de chat. Pase el puntero del ratón por encima de los iconos de los botones de la barra de herramientas para ver una descripción.
 
-    - Área de respuesta del chat: El área de respuesta del chat es el espacio situado debajo de la barra de herramientas de la Vista de chat donde GitHub Copilot muestra las respuestas. Las respuestas incluyen sugerencias de código, explicaciones, elementos interactivos y otra información relacionada con la indicación.
+    - Área de respuesta de chat: el área de respuesta de chat es el espacio situado debajo de la barra de herramientas de la vista Chat donde GitHub Copilot muestra las respuestas. Las respuestas incluyen sugerencias de código, explicaciones, elementos interactivos y otra información relacionada con la indicación.
 
-    - Botón Agregar contexto: El botón Agregar contexto se encuentra en la sección inferior de la Vista de chat. Puede usar este botón para buscar recursos que añaden contexto a la Sesión de chat. Los recursos pueden ser cualquier cosa, desde archivos de proyecto internos a repositorios públicos en GitHub externos a la organización.
+    - Botón "Agregar contexto": el botón "Agregar contexto" se encuentra en la sección inferior de la vista Chat. Puede usar este botón para buscar recursos que añaden contexto a la Sesión de chat. Los recursos pueden ser cualquier cosa, desde archivos de proyecto internos a repositorios públicos en GitHub externos a la organización.
 
-    - Preguntar a Copilot: El cuadro de texto Preguntar a Copilot es donde se escriben las indicaciones. Puede usar el cuadro de texto Preguntar a Copilot para hacer preguntas de GitHub Copilot sobre el código base, solicitar sugerencias de código o pedir ayuda con tareas específicas.
+    - Preguntar a Copilot: el cuadro de texto "Pregúntale a Copilot" es donde se escriben las indicaciones. Puede usar el cuadro de texto Preguntar a Copilot para hacer preguntas de GitHub Copilot sobre el código base, solicitar sugerencias de código o pedir ayuda con tareas específicas.
 
-    - Botón de Chat con extensión: El botón Chat con extensión se encuentra debajo del cuadro de texto Preguntar a Copilot. Las extensiones de GitHub Copilot son un tipo de aplicación de GitHub que integra la potencia de herramientas externas en GitHub Copilot Chat. Puede usar este botón para seleccionar una lista de extensiones de Copilot. Las extensiones predeterminadas proporcionan una combinación de participantes de chat y comandos de barra diagonal que proporcionan contexto para sus indicaciones.
+    - Botón "Chat con extensión": el botón "Chat con extensión" se encuentra debajo del cuadro de texto "Pregúntale a Copilot". Las extensiones de GitHub Copilot son un tipo de aplicación de GitHub que integra la potencia de herramientas externas en GitHub Copilot Chat. Puede usar este botón para seleccionar una lista de extensiones de Copilot. Las extensiones predeterminadas proporcionan una combinación de participantes de chat y comandos de barra diagonal que proporcionan contexto para sus indicaciones.
 
-        > **NOTA**: Cualquier persona con un plan Copilot Pro, Copilot Pro+, o Copilot Free puede usar extensiones de Copilot. En el caso de las organizaciones o empresas con un plan Copilot Business o Copilot Enterprise, los propietarios de la organización y los administradores de la empresa pueden conceder acceso a las extensiones de Copilot. Las extensiones de Copilot no están disponibles para GitHub Enterprise Server.
+        > **NOTA**: Cualquier persona con un plan Copilot Pro, Copilot Pro+ o Copilot Free puede usar extensiones de Copilot. En el caso de las organizaciones o empresas con un plan Copilot Business o Copilot Enterprise, los propietarios de la organización y los administradores de la empresa pueden conceder acceso a las extensiones de Copilot. Las extensiones de Copilot no están disponibles para GitHub Enterprise Server.
 
-    - Botón Iniciar charla de voz: El botón Iniciar charla de voz se encuentra debajo del cuadro de texto Preguntar a Copilot. Puede usar este botón para habilitar o deshabilitar las interacciones de voz con GitHub Copilot. Cuando se habilitan las interacciones de voz, puede usar la voz para formular preguntas de GitHub Copilot o solicitar sugerencias de código.
+    - Botón "Iniciar chat de voz": el botón "Iniciar chat de voz" se encuentra debajo del cuadro de texto "Pregúntale a Copilot". Puede usar este botón para habilitar o deshabilitar las interacciones de voz con GitHub Copilot. Cuando se habilitan las interacciones de voz, puede usar la voz para formular preguntas de GitHub Copilot o solicitar sugerencias de código.
 
-    - Menú modo de chat: El menú desplegable Modo de chat se encuentra a la derecha del botón Iniciar charla de voz. En función de sus necesidades específicas, puede elegir entre diferentes modos de chat:
+    - Menú "Modo chat": el menú desplegable "Modo chat" se encuentra a la derecha del botón "Iniciar chat de voz". En función de sus necesidades específicas, puede elegir entre diferentes modos de chat:
 
-        - **Pregunta**: Use este modo para hacer preguntas de GitHub Copilot sobre el código base. Puede pedirle a GitHub Copilot que explique el código, sugiera cambios o proporcione información sobre el código base.
-        - **Editar**: Use este modo para editar código en el área de trabajo. Puede usar GitHub Copilot para refactorizar el código, agregar comentarios o realizar otros cambios en el código.
-        - **Agente**: Use este modo para ejecutar GitHub Copilot como agente. Puede GitHub Copilot para ejecutar comandos, ejecutar código o realizar otras tareas en el área de trabajo.
+        - **Preguntar**: use este modo para hacer preguntas a GitHub Copilot sobre el código base. Puede pedirle a GitHub Copilot que explique el código, sugiera cambios o proporcione información sobre el código base.
+        - **Editar**: use este modo para editar código en el área de trabajo. Puede usar GitHub Copilot para refactorizar el código, agregar comentarios o realizar otros cambios en el código.
+        - **Agente**: use este modo para ejecutar GitHub Copilot como agente. Puede GitHub Copilot para ejecutar comandos, ejecutar código o realizar otras tareas en el área de trabajo.
 
-    - Menú Seleccionar modelo: El menú Seleccionar modelo se encuentra a la derecha del menú Modo de chat. Puede usar este botón para seleccionar el modelo que GitHub Copilot utiliza para generar sugerencias de código. El modo predeterminado es GPT-4o. Las selecciones de modelo pueden limitarse en función de la suscripción de GitHub Copilot, la configuración de GitHub Copilot y los modelos disponibles en su región.
+    - Menú "Seleccionar modelo": el menú "Seleccionar modelo" se encuentra a la derecha del menú "Modo chat". Puede usar este botón para seleccionar el modelo que GitHub Copilot utiliza para generar sugerencias de código. El modo predeterminado es GPT-4o. Las selecciones de modelo pueden limitarse en función de la suscripción de GitHub Copilot, la configuración de GitHub Copilot y los modelos disponibles en su región.
 
-    - Menú Enviar y distribuir: El menú Enviar y distribuir se encuentra a la derecha del menú Seleccionar modelo. Puede usar este botón para enviar el mensaje a GitHub Copilot y recibir una respuesta. El menú incluye varias opciones para enviar la indicación.
+    - Menú "Enviar y distribuir": el menú "Enviar y distribuir" se encuentra a la derecha del menú "Seleccionar modelo". Puede usar este botón para enviar el mensaje a GitHub Copilot y recibir una respuesta. El menú incluye varias opciones para enviar la indicación.
 
 1. Use el cuadro de texto Preguntar a Copilot para escribir el mensaje siguiente y, a continuación, envíe el mensaje:
 
@@ -261,11 +265,11 @@ La ventana Chat rápido es una interfaz simplificada para interactuar con GitHub
 
     Las tres opciones de menú son:
 
-    - Abrir chat: Esta opción se usa para abrir la Vista de chat.
+    - Abrir chat: esta opción se usa para abrir la vista Chat.
 
-    - Chat insertado del editor: Esta opción se usa para interactuar con GitHub Copilot directamente en el editor de código. La opción Chat insertado solo está habilitada cuando hay un archivo abierto en el editor.
+    - Chat insertado en el editor: esta opción se usa para interactuar con GitHub Copilot directamente en el editor de código. La opción Chat insertado solo está habilitada cuando hay un archivo abierto en el editor.
 
-    - Chat rápido: Esta opción se usa para interactuar con GitHub Copilot mediante una interfaz simplificada. Puede usar el chat rápido para formular preguntas, solicitar sugerencias de código u obtener ayuda con tareas específicas sin salir del editor de código.
+    - Chat rápido: esta opción se usa para interactuar con GitHub Copilot mediante una interfaz simplificada. Puede usar el chat rápido para formular preguntas, solicitar sugerencias de código u obtener ayuda con tareas específicas sin salir del editor de código.
 
 1. En el menú Copilot Chat, seleccione **Chat rápido**.
 
@@ -285,7 +289,7 @@ La ventana Chat rápido es una interfaz simplificada para interactuar con GitHub
 
 1. Observe que la ventana Chat rápido ahora incluye **Program.cs** a la derecha del botón **Agregar contexto**.
 
-    > **SUGERENCIA**: Agregar archivos de proyecto al contexto de chat (vista chat, chat rápido o chat insertado) ayuda a GitHub Copilot a proporcionar sugerencias más relevantes. Al agregar archivos de proyecto al contexto de chat, a menudo es más fácil usar una operación de arrastrar y colocar en lugar del botón Agregar contexto.
+    > **SUGERENCIA**: La adición de archivos de proyecto al contexto de chat (vista Chat, Chat rápido o Chat insertado) ayuda a GitHub Copilot a proporcionar sugerencias más pertinentes. Al agregar archivos de proyecto al contexto de chat, a menudo es más fácil usar una operación de arrastrar y colocar en lugar del botón Agregar contexto.
 
 1. Desplácese hasta la parte superior de la ventana Chat rápido y vuelva a enviar el mismo símbolo del sistema:
 
@@ -301,7 +305,7 @@ La ventana Chat rápido es una interfaz simplificada para interactuar con GitHub
 
     Cambiar a la Vista de chat resulta útil cuando se necesita ampliar y gestionar una sesión de chat que se inició en la ventana de Chat rápido.
 
-    > **SUGERENCIA**: La ventana Chat rápido es excelente para preguntas rápidas y tareas sencillas. Sin embargo, si desea un entorno de chat más dedicado, debe usar la Vista de chat. La Vista de chat ofrece una interfaz más completa para interactuar con GitHub Copilot e incluye funciones como el historial de chat, la gestión de archivos y opciones más avanzadas para gestionar las sesiones de chat.
+    > **SUGERENCIA**: La ventana "Chat rápido" es excelente para preguntas rápidas y tareas sencillas. Sin embargo, si desea un entorno de chat más dedicado, debe usar la Vista de chat. La Vista de chat ofrece una interfaz más completa para interactuar con GitHub Copilot e incluye funciones como el historial de chat, la gestión de archivos y opciones más avanzadas para gestionar las sesiones de chat.
 
 ### Exploración de las características de Chat insertado
 
@@ -361,7 +365,7 @@ La interfaz de Chat insertado está diseñada para interacciones de código dire
 
 ### Comparar los modos Preguntar y Editar de la Vista de chat
 
-La Vista de chat tiene tres modos: **Preguntar**, **Editar** y **Agente**. El modo Preguntar está diseñado para formular preguntas y generar sugerencias de código, mientras que el modo Editar está diseñado para tareas de refactorización y edición de código. El modo Agente está diseñado para ejecutar comandos y ejecutar código.
+La vista Chat tiene tres modos: **Preguntar**, **Editar** y **Agente**. El modo Preguntar está diseñado para formular preguntas y generar sugerencias de código, mientras que el modo Editar está diseñado para tareas de refactorización y edición de código. El modo Agente está diseñado para ejecutar comandos y ejecutar código.
 
 1. Asegúrese de que tiene abierta la Vista de chat en el modo **Preguntar**.
 
@@ -392,9 +396,9 @@ La Vista de chat tiene tres modos: **Preguntar**, **Editar** y **Agente**. El mo
 
     Observe que al mantener el puntero del mouse sobre el código, la Vista de chat muestra las siguientes opciones:
 
-    - **Aplicar a Program.cs**: Use la opción Aplicar a Program.cs para aplicar la actualización de código sugerida al archivo Program.cs.
-    - **Insertar en el cursor**: Use la opción Insertar en el cursor para insertar la actualización de código sugerida en la posición actual del cursor en el editor.
-    - **Copia**: Use la opción Copiar para copiar la actualización de código sugerida en el Portapapeles.
+    - **Aplicar a Program.cs**: use esta opción para aplicar la actualización de código sugerida al archivo Program.cs.
+    - **Insertar en cursor**: use esta opción para insertar la actualización de código sugerida en la posición actual del cursor en el editor.
+    - **Copiar**: use esta opción para copiar la actualización de código sugerida en el Portapapeles.
 
 1. En la vista Chat, seleccione **Establecer modo** y, después, **Editar**.
 
@@ -420,7 +424,7 @@ La Vista de chat tiene tres modos: **Preguntar**, **Editar** y **Agente**. El mo
 
 1. En la vista Chat, selecciona **Mantener** para aplicar las actualizaciones de código sugeridas.
 
-> **NOTA**: El modo agente de la Vista de chat está diseñado para ejecutar tareas mediante un agente autónomo. Para conservar los recursos de GitHub Copilot, el modo agente no se usa en este ejercicio.
+> **NOTA**: El modo Agente de la vista Chat está diseñado para ejecutar tareas mediante un agente autónomo. Para conservar los recursos de GitHub Copilot, el modo agente no se usa en este ejercicio.
 
 ### Exploración de sugerencias de finalización de código
 

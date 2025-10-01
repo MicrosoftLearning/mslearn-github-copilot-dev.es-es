@@ -10,7 +10,7 @@ GitHub Copilot puede ayudarle a comprender y documentar un código base mediante
 
 Este ejercicio debería tardar aproximadamente **20** minutos en completarse.
 
-> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar su propia cuenta de GitHub y suscripción de GitHub Copilot. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
+> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar una cuenta de GitHub y una suscripción de GitHub Copilot propias. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
 
 ## Antes de comenzar
 
@@ -26,9 +26,9 @@ Si usa un entorno de laboratorio hospedado para este ejercicio:
 
 - Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, pegue la siguiente dirección URL en la barra de navegación del sitio de un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
-- Abra un terminal de comandos y luego ejecute los siguientes comandos:
+- Para asegurarse de que el SDK de .NET está configurado para usar el repositorio oficial de NuGet.org como origen para descargar y restaurar paquetes:
 
-    A fin de asegurarse de que Visual Studio Code está configurado para usar la versión correcta de .NET, ejecute el siguiente comando:
+    Abra un terminal de comandos y luego ejecute los siguientes comandos:
 
     ```bash
 
@@ -44,7 +44,7 @@ Su compañero ha desarrollado una versión inicial de la aplicación de bibliote
 
 Este ejercicio incluye las siguientes tareas:
 
-- Configure la aplicación de biblioteca en Visual Studio Code.
+- Configurar la aplicación de biblioteca en Visual Studio Code.
 - Use GitHub Copilot para explicar el código base de la aplicación de biblioteca.
 - Usar GitHub Copilot para crear un archivo README.md para la aplicación de biblioteca.
 
@@ -96,7 +96,7 @@ Siga estos pasos para configurar la aplicación de la biblioteca:
 
     Por ejemplo, en la vista EXPLORADOR DE SOLUCIONES, haga clic con el botón derecho en **AccelerateDevGHCopilot**y, después, seleccione **Compilar**.
 
-    Verá varias Advertencias, pero no debería haber Errores.
+    Verá varias Advertencias, pero no debería haber ningún Errores.
 
 ## Uso de GitHub Copilot para explicar el código base de la aplicación de biblioteca
 
@@ -122,7 +122,7 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
     También puede abrir la vista Chat mediante el método abreviado de teclado **Ctrl+Alt+I**.
 
-1. En la vista Chat, escriba una indicación que use el participante de chat **@workspace** de GitHub Copilot para generar una descripción del proyecto.
+1. En la vista Chat, escriba un mensaje que use el participante de chat **@workspace** de GitHub Copilot para generar una descripción del proyecto.
 
     Por ejemplo, escriba el siguiente símbolo del sistema en la vista Chat:
 
@@ -159,7 +159,7 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
     @workspace #usages How is the ConsoleApp class used?
     ```
 
-    Use variables de chat, como **#usages**, para incluir contexto específico en la indicación. Para ver una lista de todas las variables de chat disponibles, escriba **#** en el cuadro de mensaje del chat.
+    Use variables de chat, como **#usages**, para incluir contexto específico en el mensaje. Para ver una lista de todas las variables de chat disponibles, escriba **#** en el cuadro de mensaje del chat.
 
     > **NOTA**: GitHub Copilot tiene en cuenta el historial de chat y los archivos de código que tiene abiertos en Visual Studio Code al crear un contexto para el mensaje y generar una respuesta.
 
@@ -177,7 +177,7 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
     @workspace /explain Explain the Program.cs file
     ```
 
-    Use comandos de barra diagonal, como **/explain**, a fin de evitar escribir indicaciones complejas para escenarios comunes. Para ver una lista de todos los comandos de barra diagonal disponibles, escriba **/** en el cuadro de mensaje del chat. Los comandos de barra oblicua disponibles pueden variar en función de tu entorno y del contexto del chat.
+    Use comandos de barra diagonal, como **/explain**, a fin de evitar escribir mensajes complejos para escenarios comunes. Para ver una lista de todos los comandos de barra diagonal disponibles, escriba **/** en el cuadro de mensaje del chat. Los comandos de barra oblicua disponibles pueden variar en función de tu entorno y del contexto del chat.
 
 1. Dedique un minuto a revisar la respuesta detallada generada por GitHub Copilot.
 
@@ -185,7 +185,7 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
 1. Cierre el archivo Program.cs.
 
-### Mejora de las respuestas de chat mediante la incorporación de contexto
+### Mejora de las respuestas de chat mediante la adición de contexto
 
 GitHub Copilot usa el contexto para generar respuestas más relevantes.
 

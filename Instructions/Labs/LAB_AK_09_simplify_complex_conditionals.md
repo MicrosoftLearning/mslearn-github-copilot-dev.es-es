@@ -30,27 +30,13 @@ Si usa un entorno de laboratorio hospedado para este ejercicio:
 
 - Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, pegue la siguiente dirección URL en la barra de navegación del sitio de un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
-- Abra un terminal de comandos y luego ejecute los siguientes comandos:
+- Para asegurarse de que el SDK de .NET está configurado para usar el repositorio oficial de NuGet.org como origen para descargar y restaurar paquetes:
 
-    A fin de asegurarse de que Visual Studio Code está configurado para usar la versión correcta de .NET, ejecute el siguiente comando:
+    Abra un terminal de comandos y luego ejecute los siguientes comandos:
 
     ```bash
 
     dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
-
-    ```
-
-    Para asegurarse de que Git está configurado para usar el nombre y la dirección de correo electrónico, actualice los siguientes comandos con la información y, después, ejecute los comandos:
-
-    ```bash
-
-    git config --global user.name "John Doe"
-
-    ```
-
-    ```bash
-
-    git config --global user.email johndoe@example.com
 
     ```
 
@@ -70,7 +56,7 @@ Siga estos pasos para descargar los proyectos de ejemplo y abrirlos en Visual S
 
     1. Vaya a la carpeta de descargas del entorno de laboratorio.
 
-    1. Haga clic con el botón derecho en *GHCopilotEx9LabApps.zip* y, después seleccione **Extraer todo**.
+    1. Haga clic con el botón derecho en **GHCopilotEx9LabApps.zip** y, después seleccione **Extraer todo**.
 
     1. Seleccione **Mostrar los archivos extraídos al completar** y, a continuación, **Extraer**.
 

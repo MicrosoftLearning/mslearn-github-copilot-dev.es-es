@@ -14,7 +14,7 @@ Este ejercicio debe tardar aproximadamente **25** minutos en completarse.
 
 ## Antes de comenzar
 
-El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
+El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
 
 Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
@@ -26,9 +26,9 @@ Si usa un entorno de laboratorio hospedado para este ejercicio:
 
 - Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, pegue la siguiente dirección URL en la barra de navegación del sitio de un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
-- Abra un terminal de comandos y luego ejecute los siguientes comandos:
+- Para asegurarse de que el SDK de .NET está configurado para usar el repositorio oficial de NuGet.org como origen para descargar y restaurar paquetes:
 
-    A fin de asegurarse de que Visual Studio Code está configurado para usar la versión correcta de .NET, ejecute el siguiente comando:
+    Abra un terminal de comandos y luego ejecute los siguientes comandos:
 
     ```bash
 
@@ -52,7 +52,7 @@ Este ejercicio incluye las siguientes tareas:
 
 ## Configurar la aplicación de biblioteca en Visual Studio Code
 
-Debe descargar la aplicación existente, extraer los archivos de código y, a continuación, abrir la solución en Visual Studio Code.
+Debe descargar la aplicación existente, extraer los archivos de código y, después, abrir la solución en Visual Studio Code.
 
 Siga estos pasos para configurar la aplicación de la biblioteca:
 
@@ -300,7 +300,7 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
 1. En la vista Chat, seleccione el botón **Establecer modo** y, a continuación, seleccione **Agente**.
 
-    > **IMPORTANTE**: Cuando se usa la vista Chat en modo de agente, GitHub Copilot puede realizar varias solicitudes Premium para completar una sola tarea. Las solicitudes Premium se pueden usar mediante avisos iniciados por el usuario y acciones de seguimiento que Copilot realiza en su nombre. El número total de solicitudes premium usadas se basa en la complejidad de la tarea, el número de pasos implicados y el modelo seleccionado.
+    > **IMPORTANTE**: Cuando se usa la vista Chat en modo de agente, GitHub Copilot puede realizar varias solicitudes Premium para completar una sola tarea. Las solicitudes premium se pueden usar en mensajes iniciados por el usuario y acciones de seguimiento que Copilot realiza en su nombre. El número total de solicitudes premium usadas se basa en la complejidad de la tarea, el número de pasos implicados y el modelo seleccionado.
 
 1. Para iniciar una tarea automatizada que crea una clase de prueba para el método JsonLoanRepository.GetLoan, escriba la indicación siguiente:
 

@@ -26,9 +26,9 @@ Si usa un entorno de laboratorio hospedado para este ejercicio:
 
 - Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, pegue la siguiente dirección URL en la barra de navegación del sitio de un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
-- Abra un terminal de comandos y luego ejecute los siguientes comandos:
+- Para asegurarse de que el SDK de .NET está configurado para usar el repositorio oficial de NuGet.org como origen para descargar y restaurar paquetes:
 
-    A fin de asegurarse de que Visual Studio Code está configurado para usar la versión correcta de .NET, ejecute el siguiente comando:
+    Abra un terminal de comandos y luego ejecute los siguientes comandos:
 
     ```bash
 

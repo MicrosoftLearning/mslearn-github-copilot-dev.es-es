@@ -10,11 +10,11 @@ Las características de finalización de código y chat interactivo de GitHub Co
 
 Este ejercicio debería tardar en completarse **30** minutos aproximadamente.
 
-> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar su propia cuenta de GitHub y suscripción de GitHub Copilot. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
+> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar una cuenta de GitHub y una suscripción de GitHub Copilot propias. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
 
 ## Antes de comenzar
 
-El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
+El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
 
 Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
@@ -26,9 +26,9 @@ Si usa un entorno de laboratorio hospedado para este ejercicio:
 
 - Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, pegue la siguiente dirección URL en la barra de navegación del sitio de un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
-- Abra un terminal de comandos y luego ejecute los siguientes comandos:
+- Para asegurarse de que el SDK de .NET está configurado para usar el repositorio oficial de NuGet.org como origen para descargar y restaurar paquetes:
 
-    A fin de asegurarse de que Visual Studio Code está configurado para usar la versión correcta de .NET, ejecute el siguiente comando:
+    Abra un terminal de comandos y luego ejecute los siguientes comandos:
 
     ```bash
 
@@ -36,7 +36,9 @@ Si usa un entorno de laboratorio hospedado para este ejercicio:
 
     ```
 
-    Para asegurarse de que Git está configurado para usar el nombre y la dirección de correo electrónico, actualice los siguientes comandos con la información y, después, ejecute los comandos:
+- Para asegurarse de que Git está configurado para usar su nombre y dirección de correo electrónico:
+
+    Actualice los siguientes comandos con la información y, a continuación, ejecute los comandos:
 
     ```bash
 
@@ -81,7 +83,7 @@ Este ejercicio incluye las siguientes tareas:
 
 ## Configurar la aplicación de biblioteca en Visual Studio Code
 
-Debe descargar la aplicación existente, extraer los archivos de código y, a continuación, abrir la solución en Visual Studio Code.
+Debe descargar la aplicación existente, extraer los archivos de código y, después, abrir la solución en Visual Studio Code.
 
 Siga estos pasos para configurar la aplicación de la biblioteca:
 

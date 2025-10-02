@@ -12,7 +12,7 @@ En este ejercicio, revisará un proyecto existente que contiene lógica de códi
 
 Este ejercicio debería tardar en completarse **30** minutos aproximadamente.
 
-> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar su propia cuenta de GitHub y suscripción de GitHub Copilot. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
+> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar una cuenta de GitHub y una suscripción de GitHub Copilot propias. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
 
 ## Antes de comenzar
 
@@ -56,7 +56,7 @@ Siga estos pasos para descargar el proyecto de ejemplo y abrirlo en Visual Stud
 
     1. Vaya a la carpeta de descargas del entorno de laboratorio.
 
-    1. Haga clic con el botón derecho en **GHCopilotEx7LabApps.zip** y, después seleccione **Extraer todo**.
+    1. Haga clic con el botón derecho en *GHCopilotEx7LabApps.zip* y, después seleccione **Extraer todo**.
 
     1. Seleccione **Mostrar los archivos extraídos al completar** y, a continuación, **Extraer**.
 
@@ -223,7 +223,7 @@ Realice los pasos siguientes para completar esta tarea:
     Analyze the AuditService and InventoryService classes. Identify the methods that contain duplicate logic patterns that could be consolidated. Describe opportunities to consolidate duplicate code.
     ```
 
-1. Dedique un minuto a revisar las respuestas de GitHub Copilot.
+1. Dedique un minuto a revisar las respuestas de GitHub Copilot.
 
     GitHub Copilot debería identificar patrones como la creación/validación/almacenamiento de entradas de auditoría en AuditService y la validación/actualización/registro de inventario en InventoryService. GitHub Copilot también puede identificar patrones duplicados relacionados con métodos auxiliares.
 
@@ -239,7 +239,7 @@ Realice los pasos siguientes para completar esta tarea:
 
     > **NOTA**: Las palabras clave `@workspace` y `#codebase` le dicen a GitHub Copilot que incluya todo el código base en el contexto de su análisis. La palabra clave `@workspace` solo está disponible cuando se usa GitHub Copilot en el modo Preguntar. La palabra clave `#codebase` se puede usar en cualquier modo (Preguntar, Editar o Agente).
 
-1. Dedique un minuto a revisar las respuestas de GitHub Copilot.
+1. Dedique un minuto a revisar las respuestas de GitHub Copilot.
 
     La respuesta debe proporcionar un análisis completo de todos los patrones de duplicación y sugerir un enfoque para consolidar el código duplicado. En un escenario de producción, debe analizar cada sección de la respuesta y considerar el uso de avisos de seguimiento para profundizar en áreas específicas.
 

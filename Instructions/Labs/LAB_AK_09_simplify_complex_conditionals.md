@@ -12,7 +12,7 @@ En este ejercicio, usará GitHub Copilot para analizar el código que contiene 
 
 Este ejercicio debería tardar en completarse **30** minutos aproximadamente.
 
-> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar una cuenta de GitHub y una suscripción de GitHub Copilot propias. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
+> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar su propia cuenta de GitHub y suscripción de GitHub Copilot. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
 
 ## Antes de comenzar
 
@@ -24,7 +24,7 @@ Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
 - Para obtener ayuda a fin de configurar el equipo local como entorno de laboratorio, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Configure los recursos de entorno de laboratorio</a>.
 
-- Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
+- Para obtener ayuda sobre cómo habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
 Si usa un entorno de laboratorio hospedado para este ejercicio:
 
@@ -56,7 +56,7 @@ Siga estos pasos para descargar los proyectos de ejemplo y abrirlos en Visual S
 
     1. Vaya a la carpeta de descargas del entorno de laboratorio.
 
-    1. Haga clic con el botón derecho en *GHCopilotEx9LabApps.zip* y, después seleccione **Extraer todo**.
+    1. Haga clic con el botón derecho en **GHCopilotEx9LabApps.zip** y, después seleccione **Extraer todo**.
 
     1. Seleccione **Mostrar los archivos extraídos al completar** y, a continuación, **Extraer**.
 
@@ -431,7 +431,7 @@ Realice los pasos siguientes para completar esta tarea:
     Después de enviar la tarea, el agente GitHub Copilot comenzará a trabajar en la tarea. Puede supervisar su progreso en la Vista de chat.
 
     > [!NOTE]
-    > Si necesita realizar cambios en la tarea, puede editar el texto en la Vista de chat y volver a enviarlo. El agente GitHub Copilot volverá a evaluar la tarea y seguirá trabajando en ella.
+    > Si necesita realizar cambios en la tarea, puede editar el texto en la Vista de chat y volver a enviarlo. El agente de GitHub Copilot volverá a evaluar la tarea y seguirá trabajando en ella.
 
 1. Supervise la Vista de chat mientras el agente GitHub Copilot trabaja en la tarea.
 

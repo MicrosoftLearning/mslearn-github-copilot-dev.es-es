@@ -6,17 +6,17 @@ lab:
 
 # Refactorización de funciones grandes mediante GitHub Copilot
 
-Las funciones grandes pueden ser difíciles de leer, mantener y probar. A menudo contienen varias responsabilidades y pueden ser difíciles de entender de un vistazo. La refactorización de funciones grandes en otras más pequeñas y centradas puede mejorar la legibilidad y el mantenimiento del código.
+Las funciones grandes pueden ser difíciles de leer, mantener y probar. A menudo contienen varias responsabilidades y pueden ser difíciles de entender de un vistazo. La legibilidad y el mantenimiento del código mejora cuando las funciones grandes se refactorizan en funciones más pequeñas y centradas.
 
 En este ejercicio, revisará un proyecto existente que contiene una función grande, analizará las opciones de funciones de responsabilidad única más pequeñas, refactorizará la función grande en funciones más pequeñas y probará el código refactorizado para asegurarse de que funciona según lo previsto. Usará GitHub Copilot en el modo Preguntar para comprender un proyecto de código existente y explorar las opciones para refactorizar la lógica. Usará GitHub Copilot en modo Agente para refactorizar el código mediante la extracción de secciones de código de la función grande para crear funciones más pequeñas. Probará el código original y refactorizado para asegurarse de que el código refactorizado funciona según lo previsto.
 
 Este ejercicio debería tardar en completarse **30** minutos aproximadamente.
 
-> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar una cuenta de GitHub y una suscripción de GitHub Copilot propias. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
+> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar su propia cuenta de GitHub y suscripción de GitHub Copilot. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
 
 ## Antes de comenzar
 
-El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
+El entorno de laboratorio debe incluir los siguientes recursos: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
 
 ### Configuración del entorno de laboratorio
 
@@ -24,7 +24,7 @@ Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
 - Para obtener ayuda a fin de configurar el equipo local como entorno de laboratorio, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Configure los recursos de entorno de laboratorio</a>.
 
-- Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
+- Para obtener ayuda sobre cómo habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
 Si usa un entorno de laboratorio hospedado para este ejercicio:
 
@@ -56,7 +56,7 @@ Siga estos pasos para descargar el proyecto de ejemplo y abrirlo en Visual Stud
 
     1. Vaya a la carpeta de descargas del entorno de laboratorio.
 
-    1. Haga clic con el botón derecho en *GHCopilotEx8LabApps.zip* y, después seleccione **Extraer todo**.
+    1. Haga clic con el botón derecho en **GHCopilotEx8LabApps.zip** y, después seleccione **Extraer todo**.
 
     1. Seleccione **Mostrar los archivos extraídos al completar** y, a continuación, **Extraer**.
 
@@ -147,7 +147,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Dedique un minuto a revisar la clase **OrderProcessor**.
 
-    Observe el método ProcessOrder. Este método representa la lógica empresarial principal para procesar los pedidos de los clientes. Observe que controla varias operaciones distintas. El método ProcessOrder es intencionadamente grande y complejo para demostrar escenarios reales en los que la lógica de negocios se ha acumulado con el tiempo, lo que dificulta la lectura, las pruebas y el mantenimiento.
+    Observe el método ProcessOrder. Este método representa la lógica empresarial principal para procesar los pedidos de los clientes. Observe que controla varias operaciones distintas. El método ProcessOrder es intencionadamente grande y complejo para demostrar escenarios reales en los que la lógica de negocios creció en complejidad con el tiempo, lo que dificulta la lectura, la prueba y el mantenimiento.
 
 1. Haga clic con el botón derecho en el método **ProcessOrder** y seleccione **Copilot** > **Explicar**.
 
@@ -171,7 +171,7 @@ Realice los pasos siguientes para completar esta tarea:
     dotnet run
     ```
 
-1. Revise la salida de la consola que se genera cuando se ejecuta la aplicación.
+1. Revise la salida de la consola generada por la aplicación.
 
     La aplicación genera una salida para cuatro casos de prueba. Cada caso de prueba muestra un escenario diferente:
 
@@ -248,7 +248,7 @@ Realice los pasos siguientes para completar esta tarea:
     - Instrucciones sobre cómo controlar los errores de forma coherente entre métodos.
     - Explicaciones de cómo mejora la capacidad de mantenimiento de la estructura refactorizada.
 
-1. Pida instrucciones adicionales sobre patrones de control de errores.
+1. Pida más instrucciones sobre los patrones de control de errores.
 
     Comprender el proceso de control de errores es fundamental para mantener el comportamiento existente al refactorizar el método ProcessOrder. Puede hacer que GitHub Copilot analice la estrategia de control de errores actual y sugiera una manera de mantener o mejorar el comportamiento existente.
 
@@ -260,7 +260,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Dedique unos minutos a revisar las recomendaciones de control de errores.
 
-    GitHub Copilot debe proporcionar instrucciones para mantener patrones de control de errores coherentes en los métodos refactorizados. Esto es fundamental porque el método actual tiene un control complejo de errores con procedimientos de reversión que se deben conservar.
+    GitHub Copilot debe proporcionar instrucciones para mantener patrones de control de errores coherentes en los métodos refactorizados. Esta guía es fundamental porque el método actual tiene un control complejo de errores con procedimientos de reversión que se deben conservar.
 
     Las recomendaciones deben abordar lo siguiente:
     - Cómo mantener el comportamiento de reversión actual (como la liberación del inventario en caso de errores de pago).
@@ -450,7 +450,7 @@ El Agente de GitHub Copilot destaca en tareas de refactorización sistemáticas
 
 Las pruebas manuales y la comprobación garantizan que el código refactorizado mantenga la lógica de negocios y la funcionalidad previstas. Un proceso de refactorización correcto debe mejorar la estructura del código al tiempo que genera un comportamiento idéntico a la implementación original.
 
-En esta tarea, probará el código refactorizado para comprobar que se ha conservado toda la lógica de negocios y que la refactorización ha logrado sus objetivos de mejora del mantenimiento y la legibilidad.
+En esta tarea, probará el código refactorizado para comprobar que se conserva toda la lógica de negocios y que se mejoran la legibilidad y el mantenimiento del código.
 
 Realice los pasos siguientes para completar esta tarea:
 
@@ -465,9 +465,9 @@ Realice los pasos siguientes para completar esta tarea:
 
     El código refactorizado debe generar exactamente los mismos resultados, lo que demuestra que la lógica de negocios se ha conservado en todo el proceso de refactorización.
 
-1. Cree y pruebe escenarios de casos perimetrales adicionales para garantizar la solidez.
+1. Cree y pruebe más escenarios de casos menos habituales para garantizar la solidez.
 
-    Cree escenarios de prueba adicionales para comprobar que el control de errores funciona correctamente en varios casos perimetrales. Puede modificar temporalmente los casos de prueba en **Program.cs** para probar escenarios adicionales.
+    Cree escenarios de prueba adicionales para comprobar que el control de errores sigue funcionando correctamente en varios casos menos comunes. Puede modificar los casos de prueba en **Program.cs** temporalmente para probar otros escenarios.
 
     Por ejemplo, puede agregar el siguiente fragmento de código antes del código que muestra el resumen de pruebas:
 
@@ -551,7 +551,7 @@ Realice los pasos siguientes para completar esta tarea:
     - Errores inesperados:
         - LogUnexpectedError(string orderId, string error)
 
-Las pruebas manuales comprueban que los esfuerzos de refactorización han logrado correctamente el objetivo de mejorar la estructura del código mientras se mantiene la funcionalidad del sistema. El código refactorizado ahora proporciona una base mucho más fácil de mantener donde cada método tiene una responsabilidad clara y centrada, lo que facilita considerablemente la implementación de futuras mejoras y correcciones de errores.
+Las pruebas manuales comprueban que los esfuerzos de refactorización han logrado correctamente el objetivo de mejorar la estructura del código mientras se mantiene la funcionalidad del sistema. El código refactorizado ahora proporciona una base mucho más fácil de mantener donde cada método tiene una responsabilidad clara y centrada, lo que facilita la implementación de futuras mejoras y correcciones de errores.
 
 ## Resumen
 

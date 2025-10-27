@@ -12,11 +12,11 @@ En este ejercicio, revisará un proyecto existente que contiene lógica de códi
 
 Este ejercicio debería tardar en completarse **30** minutos aproximadamente.
 
-> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar una cuenta de GitHub y una suscripción de GitHub Copilot propias. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
+> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar su propia cuenta de GitHub y suscripción de GitHub Copilot. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
 
 ## Antes de comenzar
 
-El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
+El entorno de laboratorio debe incluir los siguientes recursos: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
 
 ### Configuración del entorno de laboratorio
 
@@ -24,7 +24,7 @@ Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
 - Para obtener ayuda a fin de configurar el equipo local como entorno de laboratorio, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Configure los recursos de entorno de laboratorio</a>.
 
-- Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
+- Para obtener ayuda sobre cómo habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
 Si usa un entorno de laboratorio hospedado para este ejercicio:
 
@@ -56,7 +56,7 @@ Siga estos pasos para descargar el proyecto de ejemplo y abrirlo en Visual Stud
 
     1. Vaya a la carpeta de descargas del entorno de laboratorio.
 
-    1. Haga clic con el botón derecho en *GHCopilotEx7LabApps.zip* y, después seleccione **Extraer todo**.
+    1. Haga clic con el botón derecho en **GHCopilotEx7LabApps.zip** y, después seleccione **Extraer todo**.
 
     1. Seleccione **Mostrar los archivos extraídos al completar** y, a continuación, **Extraer**.
 
@@ -96,7 +96,7 @@ Siga estos pasos para descargar el proyecto de ejemplo y abrirlo en Visual Stud
 
 ## Escenario del ejercicio
 
-Es desarrollador de software y trabaja para una empresa de consultoría. Los clientes necesitan ayudar a consolidar la lógica de código duplicada. El objetivo es mejorar la capacidad de mantenimiento del código a la vez que se conserva la funcionalidad existente. Se le asigna a la aplicación siguiente:
+Es desarrollador de software y trabaja para una empresa de consultoría. Los clientes necesitan ayuda para consolidar la lógica de código duplicada. El objetivo es mejorar la capacidad de mantenimiento del código a la vez que se conserva la funcionalidad existente. Se le asigna a la aplicación siguiente:
 
 - E-CommerceOrdersAndReturns: Se trata de una aplicación de comercio electrónico que procesa los pedidos de los clientes y controla los resultados del producto. Incluye la lógica empresarial básica para validar pedidos y devoluciones, calcular los gastos de envío, enviar notificaciones por correo electrónico, registrar actividades de auditoría y gestionar los niveles de inventario.
 
@@ -123,7 +123,7 @@ Realice los pasos siguientes para completar esta tarea:
 
     Abra **OrderProcessor.cs** y **ReturnProcessor.cs** en paralelo. Estas clases representan la lógica empresarial principal para procesar pedidos de clientes y devoluciones de productos, respectivamente.
 
-    Observe que las dos clases tienen firmas de método similares y patrones de procesamiento. Este es el tipo más obvio de duplicación, pero hay duplicaciones adicionales y más sutiles en todo el código base.
+    Observe que las dos clases tienen firmas de método similares y patrones de procesamiento. Esta similitud es el tipo más obvio de duplicación, pero hay otras duplicaciones más sutiles en todo el código base.
 
 1. Revise la capa Servicios.
 
@@ -145,7 +145,7 @@ Realice los pasos siguientes para completar esta tarea:
     - Niveles de inventario actualizados
     - Pruebas de validación de seguridad con varias entradas no válidas
 
-    La aplicación ejecuta 5 escenarios de prueba para demostrar errores de validación de seguridad y procesamiento correctos.
+    La aplicación ejecuta cinco escenarios de prueba para demostrar errores de validación de seguridad y procesamiento correctos.
 
 1. Dedique un minuto a clasificar los patrones de código duplicados que haya observado.
 
@@ -209,7 +209,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Dedique un minuto a revisar las respuestas de GitHub Copilot.
 
-    GitHub Copilot debe identificar la lógica duplicada para controlar las confirmaciones de pedido y devolver confirmaciones. Esto incluye un enfoque con plantilla para preparar y enviar correos electrónicos. GitHub Copilot también puede identificar patrones duplicados relacionados con los métodos auxiliares y el resultado de la consola.
+    GitHub Copilot debe identificar la lógica duplicada para controlar las confirmaciones de pedido y devolver confirmaciones. La respuesta incluye un enfoque con plantilla para preparar y enviar correos electrónicos. GitHub Copilot también puede identificar patrones duplicados relacionados con los métodos auxiliares y el resultado de la consola.
 
 1. Actualice el contexto del chat para especificar los archivos **AuditService.cs** e **InventoryService.cs**.
 
@@ -223,7 +223,7 @@ Realice los pasos siguientes para completar esta tarea:
     Analyze the AuditService and InventoryService classes. Identify the methods that contain duplicate logic patterns that could be consolidated. Describe opportunities to consolidate duplicate code.
     ```
 
-1. Dedique un minuto a revisar las respuestas de GitHub Copilot.
+1. Dedique un minuto a revisar las respuestas de GitHub Copilot.
 
     GitHub Copilot debería identificar patrones como la creación/validación/almacenamiento de entradas de auditoría en AuditService y la validación/actualización/registro de inventario en InventoryService. GitHub Copilot también puede identificar patrones duplicados relacionados con métodos auxiliares.
 
@@ -239,7 +239,7 @@ Realice los pasos siguientes para completar esta tarea:
 
     > **NOTA**: Las palabras clave `@workspace` y `#codebase` le dicen a GitHub Copilot que incluya todo el código base en el contexto de su análisis. La palabra clave `@workspace` solo está disponible cuando se usa GitHub Copilot en el modo Preguntar. La palabra clave `#codebase` se puede usar en cualquier modo (Preguntar, Editar o Agente).
 
-1. Dedique un minuto a revisar las respuestas de GitHub Copilot.
+1. Dedique un minuto a revisar las respuestas de GitHub Copilot.
 
     La respuesta debe proporcionar un análisis completo de todos los patrones de duplicación y sugerir un enfoque para consolidar el código duplicado. En un escenario de producción, debe analizar cada sección de la respuesta y considerar el uso de avisos de seguimiento para profundizar en áreas específicas.
 
@@ -267,7 +267,7 @@ El modo Preguntar de GitHub Copilot es especialmente eficaz para identificar du
 
 ### Consolide la lógica duplicada utilizando GitHub Copilot Chat (modo Agente).
 
-El modo agente de GitHub Copilot le permite asignar tareas complejas de refactorización de varios pasos que abarcan varios archivos y capas arquitectónicas. El agente puede crear archivos nuevos de forma autónoma, modificar el código existente e implementar estrategias de refactorización completas al tiempo que le mantiene informado de su progreso.
+El modo agente de GitHub Copilot le permite asignar tareas moderadamente complejas de refactorización de varios pasos que abarcan varios archivos y capas arquitectónicas. El agente puede crear archivos nuevos de forma autónoma, modificar el código existente e implementar estrategias de refactorización completas al tiempo que le mantiene informado de su progreso.
 
 En esta tarea, usará el agente GitHub Copilot para eliminar sistemáticamente los patrones de código duplicados identificados en la tarea anterior, empezando por las duplicaciones más sencillas y avanzando hacia consolidaciones más complejas en la capa de servicio.
 
@@ -275,7 +275,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Cambie la Vista de chat de GitHub Copilot al modo Agente.
 
-    Al usar el modo Agente, GitHub Copilot puede realizar cambios autónomos en el código base. El modo Agente es especialmente útil para tareas complejas de refactorización de varios pasos.
+    Al usar el modo Agente, GitHub Copilot puede realizar cambios autónomos en el código base. El modo Agente es adecuado para tareas de refactorización de varios pasos moderadamente complejas.
 
     Para cambiar los modos, busque el selector de modo (normalmente en la esquina inferior izquierda de la vista Chat) y seleccione **Agente**.
 
@@ -311,11 +311,11 @@ Realice los pasos siguientes para completar esta tarea:
 
     Para ayudar al agente a medida que se procesa la tarea, proporcione permiso para continuar o proporcionar contexto adicional según sea necesario. Por ejemplo, si el agente solicita permiso para compilar o ejecutar la aplicación, seleccione **Continuar.**
 
-    El agente realizará lo siguiente durante esta tarea:
+    El agente completa los pasos siguientes durante esta tarea:
 
     - Crear un nuevo **archivo ValidationService.cs** en la carpeta Servicios
     - Extracción de la lógica de validación en un método reutilizable
-    - Actualizar ambas clases de procesador para usar el nuevo servicio
+    - Actualizar ambas clases de procesador (para usar el nuevo servicio)
     - Eliminación de los métodos de validación privada duplicados
     - Comprobación de la funcionalidad con una compilación y ejecución de pruebas correctas
 
@@ -429,7 +429,7 @@ Realice los pasos siguientes para completar esta tarea:
     - **Capacidad de mantenimiento**: Los cambios en las reglas de negocio ahora requieren actualizaciones en una sola ubicación
     - **Legibilidad**: La estructura de código es clara y lógica
     - **Reusabilidad**: Los servicios compartidos se pueden ampliar fácilmente para los requisitos futuros.
-    - **Extensibilidad**: Se pueden agregar nuevas características con un impacto mínimo en el código existente
+    - **Extensibilidad**: Se pueden agregar nuevas características con un efecto mínimo en el código existente
 
 Las pruebas manuales comprueban que los esfuerzos de consolidación han logrado el objetivo previsto: eliminar el código duplicado al tiempo que mantiene la funcionalidad del sistema. La arquitectura ahora proporciona una base más fácil de mantener para el desarrollo futuro, donde los cambios en las reglas de negocio se pueden implementar en una sola ubicación en lugar de requerir actualizaciones en varias implementaciones duplicadas.
 

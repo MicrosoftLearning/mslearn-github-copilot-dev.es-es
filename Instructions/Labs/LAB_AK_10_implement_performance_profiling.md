@@ -16,7 +16,7 @@ Este ejercicio debería tardar en completarse **30** minutos aproximadamente.
 
 ## Antes de comenzar
 
-El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
+El entorno de laboratorio debe incluir los siguientes recursos: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
 
 ### Configuración del entorno de laboratorio
 
@@ -24,7 +24,7 @@ Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
 - Para obtener ayuda a fin de configurar el equipo local como entorno de laboratorio, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Configure los recursos de entorno de laboratorio</a>.
 
-- Para obtener ayuda a fin de habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
+- Para obtener ayuda sobre cómo habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
 Si usa un entorno de laboratorio hospedado para este ejercicio:
 
@@ -106,7 +106,7 @@ Siga estos pasos para descargar el proyecto de ejemplo y abrirlo en Visual Stud
 
 Es desarrollador de software y trabaja para una empresa de consultoría. Los clientes necesitan ayuda para implementar la generación de perfiles de rendimiento en aplicaciones heredadas. El objetivo es mejorar el rendimiento del código a la vez que se conserva la legibilidad y la funcionalidad existente. Se le asigna a la aplicación siguiente:
 
-- ContosoOnlineStore: Se trata de una aplicación de comercio electrónico que procesa los pedidos de los clientes. La aplicación incluye la administración del catálogo de productos con funcionalidades de búsqueda, seguimiento de inventario con reservas de existencias, procesamiento de pedidos con validación y recibos, servicios de notificaciones por correo electrónico y validación de seguridad. La aplicación usa patrones modernos de arquitectura de .NET, como la inserción de dependencias, el registro estructurado y la administración de configuración, pero contiene cuellos de botella de rendimiento que reflejan escenarios reales.
+- ContosoOnlineStore: ContosoOnlineStore es una aplicación de comercio electrónico que procesa los pedidos de los clientes. La aplicación incluye la administración del catálogo de productos con funcionalidades de búsqueda, seguimiento de inventario con reservas de existencias, procesamiento de pedidos con validación y recibos, servicios de notificaciones por correo electrónico y validación de seguridad. La aplicación usa patrones modernos de arquitectura de .NET, como la inserción de dependencias, el registro estructurado y la administración de configuración, pero contiene cuellos de botella de rendimiento que reflejan escenarios reales.
 
 > **NOTA**: Los cuellos de botella en el código incluyen ineficiencias e inconvenientes de rendimiento intencionales, así como retrasos simulados que aproximan el tiempo real de las dependencias externas. Los retrasos simulados deben conservarse cuando se refactoriza el código para permitir comparaciones de rendimiento de "antes y después".
 

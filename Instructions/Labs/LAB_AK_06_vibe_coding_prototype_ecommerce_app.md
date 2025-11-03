@@ -10,9 +10,9 @@ La codificación de ambiente es un enfoque de programación que usa herramientas
 
 En este ejercicio, usará un proceso de codificación de ambiente y el agente GitHub Copilot para crear una versión prototipo de una aplicación de compras en línea. La aplicación prototipo incluye las siguientes páginas: productos, detalles del producto, carro de la compra y finalización de la compra. La aplicación incluye navegación básica entre páginas y un conjunto de datos limitado que ayuda a demostrar las características de la aplicación. El prototipo no incluye ninguna funcionalidad de back-end, como la autenticación de usuario, el procesamiento de pagos o la integración de bases de datos.
 
-Este ejercicio debería tardar en completarse **30** minutos aproximadamente.
+Este ejercicio debería tardar en completarse**30** minutos aproximadamente.
 
-> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar su propia cuenta de GitHub y suscripción de GitHub Copilot. Si no tiene una cuenta de GitHub, puede <a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
+> **IMPORTANTE**: Para completar este ejercicio, debe proporcionar su propia cuenta de GitHub y suscripción de GitHub Copilot. Si no tiene una cuenta de GitHub, puede<a href="https://github.com/" target="_blank">registrarse</a> para obtener una cuenta individual gratuita y usar un plan gratuito de GitHub Copilot para completar el ejercicio. Si tiene acceso a una suscripción de GitHub Copilot Pro, GitHub Copilot Pro+, GitHub Copilot Business o GitHub Copilot Enterprise desde el entorno de laboratorio, puede usar la suscripción de GitHub Copilot existente para completar este ejercicio.
 
 ## Antes de comenzar
 
@@ -23,13 +23,13 @@ El entorno de laboratorio debe incluir lo siguiente:
 
 Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
-- Puede descargar el archivo del instalador de Visual Studio Code desde la siguiente dirección URL: <a href="https://code.visualstudio.com/download" target="_blank">Descargar Visual Studio Code</a>.
+- Puede descargar el archivo del instalador de Visual Studio Code desde la siguiente dirección URL:<a href="https://code.visualstudio.com/download" target="_blank">Descargar Visual Studio Code</a>.
 
-- Para obtener ayuda sobre cómo habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
+- Para obtener ayuda sobre cómo habilitar la suscripción de GitHub Copilot en Visual Studio Code, abra el siguiente vínculo en un explorador:<a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
 Si usa un entorno de laboratorio hospedado que admite este ejercicio:
 
-- Para obtener ayuda con la habilitación de la suscripción de GitHub Copilot en Visual Studio Code, abra un explorador y pegue la siguiente dirección URL en la barra de navegación del sitio: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
+- Para obtener ayuda con la habilitación de la suscripción de GitHub Copilot en Visual Studio Code, abra un explorador y pegue la siguiente dirección URL en la barra de navegación del sitio:<a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Habilitación de GitHub Copilot en Visual Studio Code</a>.
 
 ## Escenario del ejercicio
 
@@ -65,11 +65,11 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
 1. Abra Visual Studio Code.
 
-1. En el menú Archivo, seleccione **Agregar carpeta al área de trabajo**.
+1. En el menú Archivo, seleccione**Agregar carpeta al área de trabajo**.
 
-1. En el cuadro de diálogo **Agregar carpeta al área de trabajo**, navegue hasta una ubicación de carpeta fácil de encontrar, cree una nueva carpeta con el nombre **VibeCoding-PrototypeApp** y, a continuación, seleccione **Agregar**.
+1. En el cuadro de diálogo**Agregar carpeta al área de trabajo**, navegue hasta una ubicación de carpeta fácil de encontrar, cree una nueva carpeta con el nombre**VibeCoding-PrototypeApp** y, a continuación, seleccione**Agregar**.
 
-    La ubicación de la carpeta debe estar fuera de cualquier repositorio de Git existente y debe ser fácil de encontrar. Por ejemplo, si usa un equipo Windows, puede crear una carpeta denominada **VibeCoding-PrototypeApp** en el **escritorio** o en el directorio **Documentos**.
+    La ubicación de la carpeta debe estar fuera de cualquier repositorio de Git existente y debe ser fácil de encontrar. Por ejemplo, si usa un equipo Windows, puede crear una carpeta denominada**VibeCoding-PrototypeApp** en el**escritorio** o en el directorio**Documentos**.
 
     Después de completar este ejercicio de laboratorio, puede archivar o eliminar el proyecto de código.
 
@@ -77,9 +77,9 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
     La vista Chat se puede abrir seleccionando el icono de GitHub Copilot situado cerca del centro superior de la ventana de Visual Studio Code, justo a la derecha del cuadro de texto de búsqueda.
 
-1. Asegúrese de que el modo de chat esté establecido en **Preguntar** y que esté seleccionado el modelo **GPT-4.1**.
+1. Asegúrese de que el modo de chat esté establecido en**Preguntar** y que esté seleccionado el modelo**GPT-4.1**.
 
-    Los menús desplegables *Establecer modo* y *Elegir modelo* se encuentran en la esquina inferior izquierda de la vista Chat.
+    Los menús desplegables*Establecer modo* y*Elegir modelo* se encuentran en la esquina inferior izquierda de la vista Chat.
 
     **Modos de GitHub Copilot**: Aunque sus funcionalidades se superponen, cada uno de los modos de chat (Preguntar, Editar y Agente) está optimizado para un propósito específico:
 
@@ -173,7 +173,7 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
     GitHub Copilot debe generar una respuesta que incluya un PRD sugerido en función de la información proporcionada. La respuesta debe incluir las secciones que ha revisado anteriormente y debe incluir contenido para cada sección en función de la información proporcionada.
 
-1. En la vista Chat, seleccione el modo **Agente**.
+1. En la vista Chat, seleccione el modo**Agente**.
 
     El menú desplegable Establecer modo se encuentra en la esquina inferior izquierda de la vista Chat.
 
@@ -183,7 +183,7 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
     Create a markdown file named VibeCodingPRD.md using your suggested sections and the inputs that I've provided.
     ```
 
-1. En la vista Chat, para guardar el archivo de VibeCodingPRD.md sugerido, seleccione **Mantener**.
+1. En la vista Chat, para guardar el archivo de VibeCodingPRD.md sugerido, seleccione**Mantener**.
 
 1. Dedique unos minutos a revisar el archivo PRD.
 
@@ -287,7 +287,7 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
     Save the low-fidelity wireframe diagrams as text files, one file for each web page and one for navigation.
     ```
 
-1. Supervise la vista Chat para asegurarse de que se guardan todos los archivos y, a continuación, seleccione **Mantener**.
+1. Supervise la vista Chat para asegurarse de que se guardan todos los archivos y, a continuación, seleccione**Mantener**.
 
 1. Tómese un par de minutos para revisar los diagramas reticulares.
 
@@ -308,7 +308,7 @@ En esta tarea, usará el agente GitHub Copilot para crear una aplicación de pr
 
 Completa los siguientes pasos para usar esta sección del ejercicio:
 
-1. En Visual Studio Code, cree una carpeta denominada **ShoppingApp** en la carpeta VibeCoding-PrototypeApp.
+1. En Visual Studio Code, cree una carpeta denominada**ShoppingApp** en la carpeta VibeCoding-PrototypeApp.
 
     El agente GitHub Copilot necesita una carpeta vacía para usarla como área de trabajo para los nuevos archivos de aplicación.
 
@@ -323,16 +323,16 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
         ├── wireframe-navigation.txt
         ├── wireframe-product-details.txt
         ├── wireframe-products.txt
-            ```└── wireframe-shopping-cart.txt
+        └── wireframe-shopping-cart.txt
     ```
 
 1. Agregue los diagramas PRD y reticulares al contexto de chat.
 
     Al agregar estos archivos al contexto de chat, se indica al agente GitHub Copilot que haga referencia a los archivos al generar una respuesta.
 
-    Puede agregar archivos al contexto de chat arrastrando y colocándolos desde la vista Explorer a la vista Chat o usando el botón **Agregar contexto** ubicado en el área inferior izquierda de la vista Chat.
+    Puede agregar archivos al contexto de chat arrastrando y colocándolos desde la vista Explorer a la vista Chat o usando el botón**Agregar contexto** ubicado en el área inferior izquierda de la vista Chat.
 
-1. En la vista Explorer, seleccione la carpeta **ShoppingApp** .
+1. En la vista Explorer, seleccione la carpeta**ShoppingApp** .
 
 1. En la vista Chat, escriba el siguiente símbolo del sistema:
 
@@ -342,24 +342,24 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
     El agente GitHub Copilot usa este mensaje para generar una aplicación de prototipo inicial en función de los requisitos que haya definido.
 
-    - El agente comprueba la carpeta **ShoppingApp** para asegurarse de que está vacía y lista para usarla como área de trabajo.
-    - El agente usa los diagramas PRD y reticular para crear los archivos de la aplicación prototipo. Los archivos siguientes se crean en la carpeta **ShoppingApp**:
+    - El agente comprueba la carpeta**ShoppingApp** para asegurarse de que está vacía y lista para usarla como área de trabajo.
+    - El agente usa los diagramas PRD y reticular para crear los archivos de la aplicación prototipo. Los archivos siguientes se crean en la carpeta**ShoppingApp**:
 
         - **app.js**: Contiene el código JavaScript que implementa la funcionalidad de la aplicación, como administrar el catálogo de productos, el carro de la compra y la navegación.
         - **index.html**: Actúa como punto de entrada para la aplicación web, configurando la estructura básica y vinculando los estilos y scripts.
         - **styles.css**: Proporciona el diseño visual y el diseño dinámico para la aplicación web prototipo.
 
-    - El agente agrega un archivo **.github/copilot-instructions.md** al área de trabajo y, a continuación, agrega el contenido de los archivos PRD y reticular al archivo **copilot-instructions.md**.
+    - El agente agrega un archivo **.github/copilot-instructions.md** al área de trabajo y, a continuación, agrega el contenido de los archivos PRD y reticular al archivo**copilot-instructions.md**.
 
     > **SUGERENCIA**: Puede almacenar instrucciones personalizadas en el área de trabajo o el repositorio en un archivo .github/copilot-instructions.md. Las instrucciones personalizadas le permiten describir directrices o reglas comunes para obtener respuestas que coincidan con sus prácticas de codificación específicas y la pila técnica. En lugar de incluir manualmente este contexto en cada consulta de chat, las instrucciones personalizadas incorporan automáticamente esta información con cada solicitud de chat. Estas instrucciones solo se aplican al área de trabajo donde se encuentra el archivo.
 
 1. Supervise la vista Chat para realizar un seguimiento del progreso del agente a medida que funciona en la aplicación prototipo.
 
-    > **NOTA**: Aunque el agente GitHub Copilot realiza tareas como agente autónomo, puede solicitar ayuda al realizar determinadas tareas. Para ayudar al agente, responda a las indicaciones que aparecen en la vista Chat. Por ejemplo, si el agente solicita permiso para ejecutar un comando en el terminal, seleccione **Ejecutar** para permitir que el agente ejecute el comando. Si el agente solicita una aclaración sobre sus requisitos, proporcione una respuesta que ayude al agente a comprender sus requisitos.
+    > **NOTA**: Aunque el agente GitHub Copilot realiza tareas como agente autónomo, puede solicitar ayuda al realizar determinadas tareas. Para ayudar al agente, responda a las indicaciones que aparecen en la vista Chat. Por ejemplo, si el agente solicita permiso para ejecutar un comando en el terminal, seleccione**Ejecutar** para permitir que el agente ejecute el comando. Si el agente solicita una aclaración sobre sus requisitos, proporcione una respuesta que ayude al agente a comprender sus requisitos.
 
-1. En la vista Chat, para guardar los archivos de la aplicación prototipo, seleccione **Mantener**.
+1. En la vista Chat, para guardar los archivos de la aplicación prototipo, seleccione**Mantener**.
 
-1. Expanda la carpeta **ShoppingApp**.
+1. Expanda la carpeta**ShoppingApp**.
 
     La carpeta debería contener los siguientes archivos:
 
@@ -374,15 +374,15 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
 1. Dedique un par de minutos a revisar cada uno de los archivos de código.
 
-    - El archivo **index.html** actúa como punto de entrada para una aplicación web. Configura la estructura básica de la aplicación y vincula los estilos y los archivos de scripts.
-    - El archivo **styles.css** proporciona el diseño visual y el diseño dinámico de la aplicación web prototipo.
-    - El archivo **app.js** contiene el código JavaScript que administra el catálogo de productos, el carro de la compra, la navegación y la representación de la interfaz de usuario.
+    - El archivo**index.html** actúa como punto de entrada para una aplicación web. Configura la estructura básica de la aplicación y vincula los estilos y los archivos de scripts.
+    - El archivo**styles.css** proporciona el diseño visual y el diseño dinámico de la aplicación web prototipo.
+    - El archivo**app.js** contiene el código JavaScript que administra el catálogo de productos, el carro de la compra, la navegación y la representación de la interfaz de usuario.
 
     Si el tiempo lo permite, considere la posibilidad de pedir a GitHub Copilot que genere una explicación detallada de cada archivo.
 
-1. Abra el archivo **index.html** en el editor de Visual Studio Code.
+1. Abra el archivo**index.html** en el editor de Visual Studio Code.
 
-1. En el menú **Ejecutar**, seleccione **Ejecutar sin depuración**
+1. En el menú**Ejecutar**, seleccione**Ejecutar sin depuración**
 
     Si se le solicita, seleccione su elección del explorador para ejecutar la aplicación.
 
@@ -435,7 +435,7 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
 1. Dedique un minuto a revisar las actualizaciones de código que genera el agente GitHub Copilot en respuesta al mensaje.
 
-1. En la vista Chat, seleccione **Mantener** para guardar los archivos de la aplicación prototipo actualizados.
+1. En la vista Chat, seleccione**Mantener** para guardar los archivos de la aplicación prototipo actualizados.
 
 1. Vuelva a ejecutar la aplicación y asegúrese de que la barra de navegación se contrae cuando el ancho sea inferior a 600 píxeles.
 
@@ -449,7 +449,7 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
 1. Dedique un minuto a revisar las actualizaciones de código.
 
-1. En la vista Chat, para guardar los archivos de la aplicación prototipo actualizados, seleccione **Mantener**.
+1. En la vista Chat, para guardar los archivos de la aplicación prototipo actualizados, seleccione**Mantener**.
 
 1. Vuelva a ejecutar la aplicación y compruebe que los emojis se muestran correctamente en la barra de navegación.
 
@@ -487,9 +487,9 @@ Completa los siguientes pasos para usar esta sección del ejercicio:
 
 1. Si el tiempo lo permite, continúe refinando la aplicación con las sugerencias de GitHub Copilot y sus propias ideas.
 
-1. En el menú Archivo, seleccione **Guardar área de trabajo como...**.
+1. En el menú Archivo, seleccione**Guardar área de trabajo como...**.
 
-1. Para guardar el archivo de configuración del área de trabajo (VibeCoding-PrototypeApp.code-workspace) en la carpeta **VibeCoding-PrototypeApp**, seleccione **Guardar**.
+1. Para guardar el archivo de configuración del área de trabajo (VibeCoding-PrototypeApp.code-workspace) en la carpeta**VibeCoding-PrototypeApp**, seleccione**Guardar**.
 
     Este archivo permite guardar y volver a abrir el área de trabajo con la misma estructura y configuración de carpetas.
 

@@ -16,7 +16,7 @@ Este ejercicio debería tardar en completarse**40** minutos aproximadamente.
 
 ## Antes de comenzar
 
-El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
+El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, CLI de GitHub, Visual Studio Code con la extensión del Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
 
 Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
@@ -72,7 +72,9 @@ Este ejercicio incluye las siguientes tareas:
 
 ### Importación del repositorio ContosoShopEasy
 
-Las importaciones de repositorios de GitHub permiten crear una copia de un repositorio existente en una cuenta propia de GitHub. Este proceso conserva el historial del repositorio original al tiempo que le proporciona control total sobre la copia importada. En esta tarea, importará el proyecto ContosoShopEasy y creará incidencias de GitHub que reflejan las vulnerabilidades de seguridad presentes en el código base.
+GitHub Importer le permite crear una copia de un repositorio existente en su propia cuenta de GitHub, lo que le proporciona control total sobre la copia importada. Aunque GitHub Importer no migra incidencias, solicitudes de incorporación de cambios o discusiones, el repositorio incluye un flujo de trabajo de Acciones de GitHub que automatiza la creación de incidencias en función del código base.
+
+En esta tarea, importará el proyecto ContosoShopEasy y creará incidencias de GitHub que reflejan las vulnerabilidades de seguridad presentes en el código base.
 
 Realice los pasos siguientes para completar esta tarea:
 
@@ -80,31 +82,75 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Inicie sesión en su cuenta de GitHub.
 
-1. Cree un repositorio denominado**ContosoShopEasy**.
+1. Abra la pestaña de repositorios.
 
-    Para crear un repositorio, seleccione el icono**+** en la esquina superior derecha de GitHub y, después, seleccione**Nuevo repositorio**.
+    Para abrir la pestaña de repositorios, haga clic en el icono de perfil de la esquina superior derecha y seleccione**Repositorios**.
 
-1. Copie los archivos del proyecto ContosoShopEasy del entorno de laboratorio local en el nuevo repositorio.
+1. En la pestaña Repositorios, seleccione el botón**Nuevo**.
 
-    Puede cargar archivos directamente desde la interfaz web de GitHub o clonar el repositorio vacío e insertar los archivos de ContosoShopEasy desde la máquina local.
+1. En la sección**Crear un nuevo repositorio**, seleccione**Importar un repositorio**.
 
-1. Cree las siguientes incidencias de GitHub para realizar el seguimiento de las vulnerabilidades de seguridad:
+    Aparece la página**Importar el proyecto a GitHub**.
 
-    - **Vulnerabilidad de inyección de código SQL**: La funcionalidad de búsqueda de productos acepta entradas no autorizadas y es vulnerable a ataques por inyección. El método`SearchProducts` de`ProductService.cs` incorpora directamente la entrada del usuario en consultas SQL simuladas sin la parametrización adecuada.
+1. En este página, en**Detalles del repositorio de origen**, escriba la siguiente dirección URL para el repositorio de origen:
 
-    - **Hash de contraseñas no seguras**: La aplicación usa hash MD5 para el almacenamiento de contraseñas, que es criptográficamente no seguro. El método`GetMd5Hash` de`UserService.cs` implementa este enfoque de hash vulnerable.
+    ```plaintext
+    https://github.com/MicrosoftLearning/resolve-github-issues-lab-project
+    ```
 
-    - **Exposición de datos sensibles**: Los números de tarjeta de crédito completos, los códigos CVV y las contraseñas se registran en texto no cifrado. El método`ProcessPayment` de`PaymentService.cs` y los métodos de registro e inicio de sesión de`UserService.cs` exponen información confidencial.
+1. En la sección**Detalles del nuevo repositorio**, en la lista desplegable**Propietario**, seleccione el nombre de usuario de GitHub.
 
-    - **Credenciales de administrador codificadas de forma rígida**: El nombre de usuario de administrador y la contraseña se codifican de forma rígida en la clase`SecurityValidator.cs`, lo que hace que sean accesibles para cualquiera con acceso al código fuente.
+1. En el campo**Nombre del repositorio**, escriba**ResolveGitHubIssues** y seleccione**Comenzar importación**.
 
-    - **Incidencias de validación de entrada**: La aplicación acepta caracteres potencialmente peligrosos sin un saneamiento correcto. El`ValidateInput` método de`SecurityValidator.cs` registra advertencias, pero sigue aceptando entradas malintencionadas.
+    GitHub crea un nuevo repositorio en su cuenta con los archivos de proyecto de ContosoShopEasy.
 
-    - **Divulgación de información**: El registro de depuración expone información confidencial del sistema y detalles de configuración. En varias clases de la aplicación se registran datos confidenciales con fines de depuración.
+    > **NOTA**: El proceso de importación puede tardar unos minutos en finalizar.
 
-    - **Tokens de sesión predecibles**: Los tokens de sesión siguen patrones predecibles basados en el nombre de usuario y la marca de tiempo. El método`GenerateSessionToken` de`SecurityValidator.cs` crea tokens que se pueden adivinar fácilmente.
+1. Espere a que finalice y abra el nuevo repositorio.
 
-    - **Problemas de seguridad en la carga de archivos**: La aplicación acepta tipos de archivo peligrosos sin una validación adecuada. El método`ValidateFileUpload` de`SecurityValidator.cs` proporciona una protección insuficiente frente a cargas malintencionadas.
+1. Vaya a la pestaña "Acciones" del repositorio y, a continuación, ejecute el flujo de trabajo de Acciones de GitHub**Create ContosoShopShopEasy Training Issues**.
+
+1. Escriba "CREATE" para confirmar la creación de la incidencia.
+
+    El flujo de trabajo creará incidencias en el repositorio para cada vulnerabilidad de seguridad identificada en el código base.
+
+    Incidencias de prioridad crítica
+
+    1. **Credenciales de administrador codificadas de forma rígida**  
+        Quite el nombre de usuario y la contraseña del administrador codificado de forma rígida.
+
+    1. **Almacenamiento de datos de tarjetas de crédito**  
+        Corrija las infracciones de cumplimiento de PCI DSS.
+
+    Incidencias de prioridad alta
+
+    1. **Vulnerabilidad de inyección de código SQL**  
+        Proteja la funcionalidad de búsqueda de productos.
+
+    1. **Hash de contraseña no segura**  
+        Reemplace MD5 por hash seguro.
+
+    1. **Información confidencial en los registros**  
+        Elimine contraseñas o tarjetas de la salida de depuración.
+
+    1. **Omisión de validación de entrada**  
+        Corrija la validación que detecta amenazas, pero las permite.
+
+    Incidencias de prioridad media
+
+    1. **Tokens de sesión predecibles**  
+        Implemente tokens criptográficos seguros.
+
+    1. **Validación de correo electrónico poco seguro**  
+        Mejore la validación del formato de correo electrónico.
+
+    1. **Requisitos de contraseña insuficientes**  
+        Refuerce las reglas de complejidad de contraseñas.
+
+    Incidencias de prioridad baja
+
+    1. **Divulgación de información**  
+         Reduzca los mensajes de error detallados y la salida de depuración.
 
 ### Revisión de las incidencias en GitHub
 
@@ -114,27 +160,23 @@ En esta tarea, revisará las incidencias abiertas del proyecto ContosoShopEasy y
 
 Realice los pasos siguientes para completar esta tarea:
 
-1. Vaya al repositorio ContosoShopEasy en GitHub.
+1. Vaya al repositorio ResolveGitHubIssues en GitHub.
 
 1. Seleccione la pestaña**Incidencias** para ver todas las incidencias abiertas.
 
-1. Revise la descripción de cada incidencia y anote de las siguientes categorías de vulnerabilidades de seguridad:
+1. Revise cada descripción de las incidencias y tenga en cuenta que el flujo de trabajo ha creado 10 incidencias de seguridad específicas organizadas por prioridad:
 
-    **Vulnerabilidades por inyección SQL**: Funcionalidad de búsqueda de productos que incorpora directamente la entrada del usuario en las consultas de base de datos, lo que crea oportunidades para ataques malintencionados por inyección de código SQL.
+    **Incidencias de prioridad crítica**: representan los riesgos de seguridad más graves que podrían comprometer por completo el sistema o llevar a infracciones normativas.
 
-    **Procedimientos criptográficos no seguros**: Uso del hash MD5 para el almacenamiento de contraseñas, que se considera criptográficamente débil y que no es adecuado para la seguridad de las contraseñas.
+    **Incidencias de alta prioridad**: son vulnerabilidades de seguridad graves que podrían permitir el acceso no autorizado o infracciones de los datos.
 
-    **Exposición de datos sensibles**: Registro de números completos de tarjetas de crédito, códigos CVV, contraseñas y otra información confidencial que nunca se debe almacenar o registrar en texto no cifrado.
+    **Incidencias de prioridad media**: representan puntos débiles de seguridad que podrían aprovecharse, pero su impacto inmediato es menor.
 
-    **Credenciales codificadas de forma rígida**: Los nombres de usuario de administrador y las contraseñas se insertan directamente en el código fuente, lo que hace que sean accesibles para cualquiera con acceso al repositorio.
+    **Incidencias de prioridad baja**: se trata de mejoras de seguridad que reducen la pérdida de información y mejoran la posición general de seguridad.
 
-    **Errores de validación de entrada**: Validación y saneamiento de la entrada del usuario insuficientes, lo que permite que la aplicación procese contenido potencialmente malintencionado.
+1. Tenga en cuenta que cada incidencia incluye descripciones detalladas de la vulnerabilidad, la ubicación específica del código, ejemplos de código vulnerable, riesgos de seguridad y criterios de aceptación para las correcciones.
 
-    **Divulgación de información**: Registro de depuración que expone la configuración confidencial del sistema, los procesos internos y los datos de usuario.
-
-    **Administración no segura de las sesiones**: Generación de tokens de sesión predecibles que podrían permitir a los atacantes secuestrar sesiones de usuario.
-
-    **Vulnerabilidades de carga de archivos**: Validación inadecuada de los archivos cargados, lo que podría permitir la ejecución de código malintencionado.
+1. Revise la incidencia**ContosoShopShop Security Training - Issue Summary**, que proporciona información general sobre todas las vulnerabilidades y los objetivos de aprendizaje.
 
 1. Tenga en cuenta que estas incidencias representan vulnerabilidades de seguridad comunes que se encuentran en aplicaciones reales y se alinean con las directrices de seguridad de OWASP.
 
@@ -146,12 +188,12 @@ En esta tarea, clonará el repositorio ContosoShopEasy, examinará la estructura
 
 Realice los pasos siguientes para completar esta tarea:
 
-1. Clone el repositorio ContosoShopEasy en el entorno de desarrollo local.
+1. Clone el repositorio ResolveGitHubIssues en el entorno de desarrollo local.
 
     Abra una ventana de terminal y ejecute el comando siguiente y reemplace`your-username` por el nombre de usuario de GitHub:
 
     ```bash
-    git clone https://github.com/your-username/ContosoShopEasy.git
+    git clone https://github.com/your-username/ResolveGitHubIssues.git
     ```
 
 1. Abra el repositorio clonado en Visual Studio Code.
@@ -185,22 +227,24 @@ Realice los pasos siguientes para completar esta tarea:
 
     Observe que la aplicación registra información confidencial, como contraseñas, números de tarjeta de crédito, credenciales de administrador y detalles internos del sistema. Esta salida es una prueba clara de los problemas de seguridad que se deben solucionar.
 
-1. Identifique los archivos y métodos específicos asociados a cada vulnerabilidad de seguridad:
+1. Dedique un minuto a examinar el código asociado a cada vulnerabilidad de seguridad tal como se define en las incidencias de GitHub:
 
-    - **Inyección de código SQL**: método`ProductService.cs` -`SearchProducts`
-    - **Hash de contraseñas no seguras**: método`UserService.cs` -`GetMd5Hash`
-    - **Exposición de datos confidenciales**: método`PaymentService.cs` -`ProcessPayment` y`UserService.cs`: métodos de registro o inicio de sesión
-    - **Credenciales codificadas de forma rígida**:`SecurityValidator.cs`: constantes de credenciales de administrador
-    - **Validación de la entrada**: método`SecurityValidator.cs` -`ValidateInput`
-    - **Divulgación de información**: Varias clases con registro de depuración
-    - **Tokens predecibles**: método`SecurityValidator.cs` -`GenerateSessionToken`
-    - **Problemas de carga de archivos**: método`SecurityValidator.cs` -`ValidateFileUpload`
+    - **Inyección de código SQL** (n.º 1): método`ProductService.cs` -`SearchProducts` (en torno a la línea 35)
+    - **Hash de contraseña no segura** (n.º 2): método`UserService.cs` -`GetMd5Hash` (en torno a la línea 55)
+    - **Datos confidenciales en los registros** (n.º 3): varios archivos: métodos de registro, inicio de sesión o pago de`UserService.cs``PaymentService.cs`.
+    - **Credenciales de administrador codificadas de forma rígida** (n.º 4):`SecurityValidator.cs`constantes de credenciales de administrador (líneas 7-9)
+    - **Almacenamiento de datos de tarjetas de crédito** (n.º 5):`Models/Order.cs`: propiedades CardNumber y CVV
+    - **Omisión de validación de entrada** (n.º 6): método que siempre devuelve true`SecurityValidator.cs` -`ValidateInput`
+    - **Tokens de sesión predecibles** (n.º 7): método`SecurityValidator.cs` -`GenerateSessionToken`
+    - **Validación de correo electrónico poco seguro** (n.º 8): método`SecurityValidator.cs` -`ValidateEmail`
+    - **Requisitos de contraseña insuficientes** (n.º 9): método`SecurityValidator.cs` -`ValidatePasswordStrength`
+    - **Divulgación de información** (n.º 10): varias clases con el registro detallado de depuración y el método de auditoría de seguridad
 
 ### Análisis de las incidencias con el modo Preguntar de GitHub Copilot
 
 El modo Preguntar de GitHub Copilot proporciona funcionalidades de análisis de código inteligentes que pueden ayudar a identificar vulnerabilidades de seguridad, comprender su posible impacto y sugerir estrategias de corrección. Al analizar sistemáticamente cada problema de seguridad, puede desarrollar una comprensión completa de los problemas antes de implementar correcciones. Este enfoque garantiza que las soluciones aborden las causas principales en lugar de solo los síntomas.
 
-En esta tarea, usará el modo Preguntar de GitHub Copilot para analizar sistemáticamente cada vulnerabilidad de seguridad en la aplicación ContosoShopEasy.
+En esta tarea, usará el modo Preguntar de GitHub Copilot para analizar sistemáticamente las vulnerabilidades de seguridad, empezando por las incidencias más críticas y siguiendo hacia abajo en orden de prioridad.
 
 Realice los pasos siguientes para completar esta tarea:
 
@@ -242,52 +286,68 @@ Realice los pasos siguientes para completar esta tarea:
     Show me how to implement secure password hashing using bcrypt or PBKDF2. What additional security measures should I implement for password handling?
     ```
 
-1. Analice los problemas de exposición de datos confidenciales.
+1. Analice las incidencias de registro de datos confidenciales (incidencia n.º 3).
 
-    Abra el archivo`PaymentService.cs` y busque el método`ProcessPayment`. Agréguelo al contexto de chat y pregunte lo siguiente:
+    Abra los archivos`PaymentService.cs` y`UserService.cs` y busque métodos que registren información confidencial. Agregue métodos pertinentes al contexto de chat y pregunte:
 
     ```text
-    What sensitive information is being logged in this payment processing method? Why is logging full credit card numbers and CVV codes a security risk, and how should payment data be handled securely?
+    What sensitive information is being logged in the payment processing and user registration methods? Why is logging passwords, credit card numbers, and CVV codes a security risk?
     ```
 
-1. Examine la vulnerabilidad de credenciales codificadas de forma rígida.
+1. Examine la vulnerabilidad de credenciales codificadas de forma rígida (incidencia n.º 4).
 
-    Abra el archivo`SecurityValidator.cs` y busque las constantes de credenciales de administrador. Agregue el código pertinente al contexto de chat y pregunte lo siguiente:
+    Abra el archivo`SecurityValidator.cs` y busque las constantes de credenciales de administrador en torno a las líneas 7-9. Agregue el código pertinente al contexto de chat y pregunte lo siguiente:
 
     ```text
     What security risks are created by hardcoding admin credentials in source code? How should application credentials be managed securely in production environments?
     ```
 
-1. Analice los puntos débiles de validación de entrada.
+1. Analice las incidencias de almacenamiento de datos de tarjetas de crédito (incidencia n.º 5).
 
-    Céntrese en el método`ValidateInput` de`SecurityValidator.cs` y pregunte lo siguiente:
+    Abra el archivo`Models/Order.cs` y examine las propiedades CardNumber y CVV. Agregue este código al contexto de chat y pregunte:
 
     ```text
-    What makes this input validation method ineffective against malicious input? How can I implement proper input sanitization to prevent XSS and other injection attacks?
+    Why is storing full credit card numbers and CVV codes a PCI DSS compliance violation? What are the proper ways to handle payment card data securely?
     ```
 
-1. Revise los problemas de divulgación de información.
+1. Revise la omisión de validación de entrada (incidencia n.º 6).
 
-    Seleccione varios métodos que contengan el registro de depuración en distintos archivos y pregunte lo siguiente:
+    Céntrese en el método`ValidateInput` en`SecurityValidator.cs` que siempre devuelve true a pesar de detectar amenazas. Preguntar:
 
     ```text
-    How does excessive debug logging create security vulnerabilities? What information should never be logged, and how can I implement secure logging practices?
+    What makes this input validation method ineffective? Why does it detect dangerous input but still return true, and how should proper input validation work?
     ```
 
-1. Examine la generación de tokens predecibles.
+1. Examine la generación de tokens de sesión predecibles (incidencia n.º 7).
 
-    Céntrese en el método`GenerateSessionToken` y pregunte lo siguiente:
+    Céntrese en el método`GenerateSessionToken` de`SecurityValidator.cs` y pregunte lo siguiente:
 
     ```text
-    Why are predictable session tokens a security risk? How should secure, unpredictable session tokens be generated to prevent session hijacking attacks?
+    Why are predictable session tokens based on username and timestamp a security risk? How should secure, unpredictable session tokens be generated?
     ```
 
-1. Analice los problemas de validación de carga de archivos.
+1. Analice la validación de correo electrónico poco seguro (incidencia n.º 8).
 
-    Revise el método`ValidateFileUpload` y pregunte lo siguiente:
+    Revise el método`ValidateEmail` en`SecurityValidator.cs` que solo comprueba los caracteres "@" and "". Preguntar:
 
     ```text
-    What makes this file upload validation insufficient for security? How can I implement comprehensive file upload security to prevent malicious file execution?
+    What makes this email validation insufficient? What are the security risks of weak email validation, and how should proper email validation be implemented?
+    ```
+
+1. Revise los requisitos de contraseña insuficientes (incidencia n.º 9).
+
+    Examine el método`ValidatePasswordStrength` en`SecurityValidator.cs` que solo requiere 4 caracteres. Preguntar:
+
+    ```text
+    Why are these password requirements insufficient for security? What are proper password complexity requirements, and how should password strength be validated?
+    ```
+
+1. Analice las incidencias de divulgación de información (incidencia n.º 10).
+
+    Seleccione el método`RunSecurityAudit` y otro registro de depuración en distintos archivos y pregunte:
+
+    ```text
+    How does the security audit method and excessive debug logging create information disclosure vulnerabilities? What information should never be exposed in logs or error messages?
     ```
 
 1. Documente los resultados del análisis como referencia durante la fase de corrección.
@@ -297,6 +357,8 @@ Realice los pasos siguientes para completar esta tarea:
 ### Resolución de incidencias con el modo Agente de GitHub Copilot
 
 El modo Agente de GitHub Copilot permite la implementación autónoma de correcciones de seguridad complejas en varios archivos y métodos. A diferencia del modo Preguntar, que proporciona análisis y recomendaciones, el modo Agente puede modificar directamente el código para implementar mejoras de seguridad. Este enfoque es especialmente eficaz para la corrección sistemática de la seguridad, donde es necesario abordar de forma coherente varias vulnerabilidades relacionadas.
+
+> **NOTA**: Para ahorrar tiempo durante este ejercicio de laboratorio, resolverá y probará una colección de incidencias e insertará actualizaciones en una sola confirmación. El procesamiento por lotes de incidencias de esta forma no es un procedimiento recomendado. Microsoft y GitHub recomiendan resolver cada incidencia de forma individual con distintas confirmaciones en lugar de procesarlas por lotes. La resolución de incidencias de forma individual proporciona una mejor rastreabilidad, revisiones de código más sencillas y opciones de reversión más seguras si surgen problemas. Cada corrección debe probarse exhaustivamente antes de pasar a la siguiente incidencia para asegurarse de que los cambios no introducen regresiones.
 
 En esta tarea, usará el modo Agente de GitHub Copilot para implementar correcciones de seguridad completas para todas las vulnerabilidades identificadas en la aplicación ContosoShopEasy.
 
@@ -314,9 +376,22 @@ Realice los pasos siguientes para completar esta tarea:
     Fix the SQL injection vulnerability in the SearchProducts method. Remove the simulated SQL query logging that demonstrates the vulnerability, and implement proper input sanitization to safely handle search terms. Ensure the method still functions correctly for legitimate searches while preventing malicious input.
     ```
 
-1. Supervise el progreso del agente y revise los cambios propuestos.
+1. Supervise el progreso del agente.
 
-    El agente modificará el código para quitar el registro vulnerable e implementará un control de entrada más seguro. Revise los cambios para asegurarse de que mantienen la funcionalidad al tiempo que aborda el problema de seguridad.
+    El agente modificará el código para quitar el registro vulnerable e implementará un control de entrada más seguro.
+
+1. Dedique un minuto a revisar los cambios propuestos y, a continuación, seleccione**Mantener** en la vista Chat.
+
+    Revise siempre las modificaciones sugeridas de GitHub Copilot en el editor de código. Asegúrese de que mantienen la funcionalidad a la vez que abordan el problema de seguridad.
+
+    En un entorno de producción, el equipo debe completar la siguiente lista de comprobación antes de pasar a la siguiente incidencia:
+
+    - El código ya no contiene la vulnerabilidad.
+    - La aplicación sigue funcionando correctamente.
+    - Los procedimientos recomendados de seguridad se implementan y no se presentan nuevas incidencias de seguridad.
+    - Las pruebas automatizadas (si están disponibles) se superan correctamente.
+    - Las actualizaciones de código están claramente documentadas.
+    - Los cambios se confirman con mensajes descriptivos y se revisan por un igual antes de combinarse y cerrar la incidencia.
 
 1. Implemente el hash de contraseñas seguras.
 
@@ -330,55 +405,71 @@ Realice los pasos siguientes para completar esta tarea:
 
     El agente implementará un hash de contraseña más seguro. A fin de probar los cambios, ejecute la aplicación para asegurarse de que el registro de usuario y el inicio de sesión siguen funcionando correctamente.
 
-1. Aborde la exposición de datos confidenciales en el procesamiento de pagos.
+1. Solucionar el registro de datos confidenciales (incidencia n.º 3).
 
-    Abra el archivo e`PaymentService.cs` indique lo siguiente al agente:
+    Céntrese en los archivos`PaymentService.cs` y`UserService.cs` e indique al agente:
 
     ```text
-    Fix sensitive data logging in the ProcessPayment method. Remove logging of full credit card numbers, CVV codes, and other sensitive payment information. Implement secure logging that masks sensitive data while maintaining useful operational information.
+    Fix sensitive data logging throughout the application. Remove logging of passwords, full credit card numbers, CVV codes, and other sensitive information. Implement secure logging that masks sensitive data while maintaining useful operational information.
     ```
 
-1. Quite las credenciales de administrador codificadas de forma rígida.
+1. Eliminar las credenciales de administrador codificadas de forma rígida (incidencia n.º 4).
 
     Céntrese en el archivo`SecurityValidator.cs` y use esta indicación:
 
     ```text
-    Remove hardcoded admin credentials and replace them with a secure configuration approach. Implement environment variable or configuration file-based credential management while maintaining the functionality for educational demonstration purposes.
+    Remove hardcoded admin credentials from the SecurityValidator class. Replace the hardcoded ADMIN_USERNAME and ADMIN_PASSWORD constants with a secure configuration approach using environment variables while maintaining the functionality for educational demonstration purposes.
     ```
 
-1. Implemente la validación de entrada.
+1. Corregir las infracciones del almacenamiento de datos de tarjetas de crédito (incidencia n.º 5).
 
-    Indique al agente que corrija las vulnerabilidades de validación de entrada:
+    Céntrese en el archivo`Models/Order.cs` e indique al agente:
 
     ```text
-    Strengthen the ValidateInput method to properly sanitize user input and prevent XSS attacks. Implement comprehensive input validation that rejects malicious content while allowing legitimate user input. Ensure the method returns false for truly dangerous input.
+    Fix PCI DSS compliance violations in the Order model. Remove or modify the CardNumber and CVV properties to avoid storing full credit card numbers and CVV codes. Implement secure payment data handling that stores only last 4 digits for display purposes.
     ```
 
-1. Reduzca la divulgación de información a través del registro.
+1. Corregir la omisión de validación de entrada (incidencia n.º 6).
 
-    Solucione los problemas de registro de depuración en varios archivos:
+    Indique al agente que corrija la vulnerabilidad de validación de entrada:
 
     ```text
-    Review all console logging throughout the application and remove or mask sensitive information. Implement secure logging practices that provide useful debugging information without exposing passwords, credit card data, or system internals.
+    Fix the ValidateInput method in SecurityValidator that currently always returns true despite detecting threats. Implement proper input validation that actually rejects dangerous content when SQL injection, XSS, or other malicious patterns are detected.
     ```
 
-1. Implemente la generación de tokens de sesión seguros.
+1. Implementar la generación de tokens de sesión seguros (incidencia n.º 7).
 
     Céntrese en la vulnerabilidad de los tokens de sesión:
 
     ```text
-    Replace the predictable session token generation with a cryptographically secure random token generator. Ensure tokens are unpredictable and sufficiently long to prevent brute force attacks.
+    Replace the predictable session token generation in GenerateSessionToken method with a cryptographically secure random token generator. Remove the username and timestamp-based pattern and implement unpredictable tokens with sufficient entropy.
     ```
 
-1. Refuerce la validación de la carga de archivos.
+1. Reforzar la validación de correo electrónico (incidencia n.º 8).
 
-    Solucione los problemas de seguridad de carga de archivos:
+    Solucione la validación de correo electrónico poco seguro:
 
     ```text
-    Implement comprehensive file upload validation that checks file types, sizes, and content. Reject dangerous file types and implement proper security controls to prevent malicious file uploads.
+    Fix the ValidateEmail method that only checks for '@' and '.' characters. Implement proper email format validation using regex or built-in validation methods. Remove email logging and add appropriate length restrictions.
     ```
 
-1. Pruebe la aplicación después de cada cambio importante.
+1. Mejorar los requisitos de contraseña (incidencia n.º 9).
+
+    Céntrese en la validación de la seguridad de la contraseña:
+
+    ```text
+    Strengthen the ValidatePasswordStrength method that currently only requires 4 characters. Implement proper password complexity requirements including minimum 8 characters, uppercase, lowercase, numbers, and special characters. Remove password logging.
+    ```
+
+1. Reducir la divulgación de información (incidencia n.º 10).
+
+    Solucione las incidencias de auditoría de seguridad y registro de depuración:
+
+    ```text
+    Fix information disclosure vulnerabilities by removing or restricting the RunSecurityAudit method and reducing verbose error messages throughout the application. Remove sensitive system information from logs while maintaining useful debugging capabilities.
+    ```
+
+1. Pruebe la aplicación.
 
     Una vez que el agente implemente correcciones para cada categoría de vulnerabilidad, ejecute la aplicación para asegurarse de que se conserva la funcionalidad:
 
@@ -419,41 +510,49 @@ Realice los pasos siguientes para completar esta tarea:
 
     Compare la salida con las notas de la ejecución de la aplicación original. Debería ver que se registra información significativamente menos confidencial.
 
-1. Pruebe la corrección de inyección de código SQL mediante el examen de la funcionalidad de búsqueda de productos.
+1. Probar la corrección de inyección de código SQL (incidencia n.º 1).
 
     Compruebe que el método`SearchProducts` ya no registra consultas SQL vulnerables y que la funcionalidad de búsqueda sigue funcionando correctamente con términos de búsqueda legítimos.
 
-1. Compruebe las mejoras de seguridad de contraseñas.
+1. Comprobar las mejoras de seguridad de la contraseña (incidencia n.º 2).
 
     Compruebe que los procesos de registro e inicio de sesión del usuario ya no registran contraseñas en texto no cifrado y que se implementa el hash de contraseña más seguro. La aplicación debe seguir autenticando a los usuarios correctamente.
 
-1. Confirme las mejoras de seguridad de procesamiento de pagos.
+1. Confirmar las correcciones de registro de datos confidenciales (incidencia n.º 3).
 
-    Asegúrese de que el procesamiento de pagos ya no registra números completos de tarjetas de crédito o códigos CVV, a la vez que mantiene la capacidad de procesar los pagos correctamente.
+    Asegúrese de que el procesamiento de pagos y las operaciones de usuario ya no registren contraseñas, números de tarjeta de crédito completos o códigos CVV, pero mantengan la capacidad de procesar transacciones correctamente.
 
-1. Valide la seguridad de las credenciales de administrador.
+1. Validar la eliminación de credenciales codificadas de forma rígida (incidencia n.º 4).
 
-    Compruebe que las credenciales de administrador codificadas de forma rígida ya no se muestran en registros o auditorías de seguridad, mientras que la funcionalidad de administrador sigue siendo accesible a través de medios seguros.
+    Compruebe que las credenciales de administrador codificadas de forma rígida ya no se muestran en registros o auditorías de seguridad, mientras que la funcionalidad de administrador sigue siendo accesible a través de la configuración segura.
 
-1. Pruebe las mejoras de validación de entrada.
+1. Probar el cumplimiento del almacenamiento de tarjetas de crédito (incidencia n.º 5).
 
-    Confirme que la validación de entrada mejorada controla correctamente la entrada legítima y potencialmente malintencionada sin interrumpir las interacciones normales del usuario.
+    Confirme que el modelo de pedido ya no almacena números de tarjetas de crédito completos o códigos CVV, y que solo se conserva la información de pago enmascarada con fines de visualización.
 
-1. Compruebe las correcciones de divulgación de información.
+1. Comprobar las correcciones de validación de entrada (incidencia n.º 6).
 
-    Revise la salida de la consola para asegurarse de que la información confidencial del sistema, los detalles de configuración y los datos de usuario ya no se exponen a través del registro de depuración.
+    Confirme que el método ValidateInput mejorado ahora rechaza correctamente las entradas peligrosas en lugar de simplemente registrar advertencias y devolver true.
 
-1. Compruebe la seguridad de los tokens de sesión.
+1. Comprobar la seguridad de los tokens de sesión (incidencia n.º 7).
 
-    Si los tokens de sesión se generan durante la ejecución de la aplicación, confirme que sean aleatorios e impredecibles en lugar de seguir el enfoque basado en patrones anterior.
+    Si se generan tokens de sesión durante la ejecución de la aplicación, confirme que parezcan aleatorios e imprevisibles en lugar de seguir el patrón de marca de tiempo de nombre de usuario anterior.
 
-1. Valide las mejoras de seguridad de carga de archivos.
+1. Probar las mejoras de validación de correo electrónico (incidencia n.º 8).
 
-    Pruebe las mejoras de validación de la carga de archivos para asegurarse de que los tipos de archivo peligrosos se rechazan correctamente mientras se aceptan los archivos legítimos.
+    Compruebe que la validación de correo electrónico ahora rechaza correctamente los formatos de correo electrónico no válidos en lugar de aceptar cualquier cadena con caracteres "@" and "".
 
-1. Compare la salida de auditoría de seguridad con la versión original.
+1. Validar las mejoras de los requisitos de contraseña (incidencia n.º 9).
 
-    Ejecute la característica de auditoría de seguridad y compare los resultados con las observaciones iniciales. La auditoría debe mostrar una posición de seguridad mejorada al tiempo que mantiene el valor educativo.
+    Pruebe que la validación de contraseñas ahora aplica los requisitos de complejidad adecuados en lugar de aceptar cualquier cadena de cuatro caracteres.
+
+1. Revisar las correcciones de divulgación de información (incidencia n.º 10).
+
+    Compruebe que el método de auditoría de seguridad se elimina o restringe y que los mensajes de error detallados ya no exponen información confidencial del sistema.
+
+1. Compare la posición general de seguridad con la versión original.
+
+    Ejecute la aplicación y compare la salida de la consola con las observaciones iniciales. La aplicación debe mostrar mejoras importantes de la seguridad al tiempo que mantiene toda la funcionalidad básica.
 
 1. Documente los problemas o áreas restantes para mejorar.
 
@@ -484,84 +583,29 @@ Realice los pasos siguientes para completar esta tarea:
     git add .
     ```
 
-1. Confirme los cambios con mensajes descriptivos que hagan referencia a las incidencias de GitHub.
+1. Confirme todas las correcciones de seguridad con un mensaje completo que haga referencia a todas las incidencias de GitHub.
 
-    Use mensajes de confirmación que describan claramente las correcciones de seguridad y hagan referencia a números de incidencia:
-
-    ```bash
-    git commit -m "Fix SQL injection vulnerability in ProductService SearchProducts method
-
-    - Remove vulnerable SQL query logging
-    - Implement proper input sanitization
-    - Maintain search functionality while preventing injection attacks
-
-    Fixes #1"
-    ```
-
-1. Realice confirmaciones adicionales para cada categoría de corrección de seguridad principal.
-
-    Confirme las mejoras en el hash de contraseñas:
+    Cree una única confirmación que solucione todas las vulnerabilidades de seguridad identificadas en el ejercicio de entrenamiento:
 
     ```bash
-    git commit -m "Replace MD5 with secure password hashing
+    git commit -m "Fix all ContosoShopEasy security vulnerabilities
 
-    - Implement bcrypt/PBKDF2 for password storage
-    - Add proper salt generation
-    - Maintain authentication compatibility
+    Security improvements implemented:
+    - Fix SQL injection in ProductService SearchProducts method
+    - Replace MD5 with secure password hashing (bcrypt/PBKDF2)
+    - Remove sensitive data from debug logging (passwords, card numbers, CVV)
+    - Remove hardcoded admin credentials, use environment variables
+    - Fix PCI DSS violations in Order model (remove full card storage)
+    - Fix input validation bypass to properly reject dangerous input
+    - Implement secure session token generation with crypto randomness
+    - Strengthen email validation with proper format checking
+    - Improve password requirements (8+ chars, complexity rules)
+    - Reduce information disclosure from security audit and debug logs
 
-    Fixes #2"
+    Fixes #1 #2 #3 #4 #5 #6 #7 #8 #9 #10"
     ```
 
-1. Continúe con confirmaciones para las correcciones de seguridad restantes:
-
-    ```bash
-    git commit -m "Remove sensitive data from payment processing logs
-
-    - Mask credit card numbers in logging
-    - Remove CVV code exposure
-    - Maintain operational logging capabilities
-
-    Fixes #3"
-
-    git commit -m "Remove hardcoded admin credentials
-
-    - Implement secure credential management
-    - Use environment variables for sensitive config
-    - Maintain admin functionality for demo purposes
-
-    Fixes #4"
-
-    git commit -m "Strengthen input validation and prevent XSS
-
-    - Implement comprehensive input sanitization
-    - Reject malicious content properly
-    - Maintain user experience for legitimate input
-
-    Fixes #5"
-
-    git commit -m "Reduce information disclosure in debug logging
-
-    - Remove sensitive data from console output
-    - Implement secure logging practices
-    - Maintain useful debugging information
-
-    Fixes #6"
-
-    git commit -m "Implement secure session token generation
-
-    - Replace predictable tokens with cryptographically secure random generation
-    - Increase token entropy to prevent brute force attacks
-
-    Fixes #7"
-
-    git commit -m "Enhance file upload security validation
-
-    - Implement comprehensive file type checking
-    - Add file size and content validation
-    - Reject dangerous file types effectively
-
-    Fixes #8"
-    ```
+    > **NOTA**: En un entorno de producción, cada incidencia se solucionaría normalmente en distintas confirmaciones con pruebas y revisiones de código individuales. Este enfoque de una sola confirmación se usa aquí solo para ahorrar tiempo durante el ejercicio de entrenamiento.
 
 1. Inserte los cambios en el repositorio de GitHub.
 
@@ -576,4 +620,3 @@ Realice los pasos siguientes para completar esta tarea:
 1. Revise el historial de confirmaciones para asegurarse de que todas las correcciones de seguridad están documentadas correctamente.
 
     Compruebe que los mensajes de confirmación describen claramente las mejoras de seguridad y proporcionan una buena pista de auditoría para futuras referencias.
-

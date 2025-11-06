@@ -6,9 +6,9 @@ lab:
 
 # Resolución de incidencias de GitHub con GitHub Copilot
 
-Las incidencias de GitHub son una manera eficaz de realizar el seguimiento de los errores, mejoras y tareas de un proyecto. En este ejercicio, aprenderá a usar GitHub Copilot para analizar y resolver incidencias en código base de ejemplo.
+Las incidencias de GitHub son una manera eficaz de realizar el seguimiento de los errores, mejoras y tareas de un proyecto.
 
-En este ejercicio, trabajará con una aplicación de comercio electrónico de ejemplo denominada ContosoShopEasy. La aplicación contiene varias vulnerabilidades de seguridad que se han registrado como incidencias de GitHub. El objetivo es usar GitHub Copilot para ayudarle a analizar y resolver estas incidencias.
+En este ejercicio, usará GitHub Copilot para ayudarle a analizar y resolver incidencias de GitHub relacionadas con vulnerabilidades de seguridad en una aplicación de comercio electrónico.
 
 Este ejercicio debería tardar en completarse**40** minutos aproximadamente.
 
@@ -16,7 +16,7 @@ Este ejercicio debería tardar en completarse**40** minutos aproximadamente.
 
 ## Antes de comenzar
 
-El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, CLI de GitHub, Visual Studio Code con la extensión del Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
+El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
 
 Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
@@ -56,9 +56,9 @@ Si usa un entorno de laboratorio hospedado para este ejercicio:
 
 ## Escenario del ejercicio
 
-Es desarrollador de software y trabaja para una empresa de consultoría. Los clientes necesitan ayuda para resolver incidencias registradas en un proyecto de GitHub. El objetivo es usar las incidencias como guía al actualizar el proyecto de código mediante GitHub Copilot en Visual Studio Code. Debe asegurarse de que todas las incidencias se solucionan y cierran. Se le asigna a la aplicación siguiente:
+Es desarrollador de software y trabaja para una empresa de consultoría. Los clientes necesitan ayuda para resolver incidencias en sus repositorios de GitHub. Debe asegurarse de que todas las incidencias se solucionan y cierran. Puede usar Visual Studio Code y GitHub Copilot como entorno de desarrollo. Se le asigna a la aplicación siguiente:
 
-- ContosoShopEasy: una aplicación realista de comercio electrónico con varias vulnerabilidades de seguridad que se han registrado como incidencias de GitHub. La aplicación muestra problemas comunes de seguridad encontrados en aplicaciones reales mientras se mantiene un flujo de trabajo funcional de comercio electrónico.
+- ContosoShopEasy: ContosoShopEasy es una aplicación de comercio electrónico que contiene varias vulnerabilidades de seguridad. Las vulnerabilidades representan incidencias comunes de seguridad encontradas en aplicaciones reales.
 
 Este ejercicio incluye las siguientes tareas:
 
@@ -70,11 +70,13 @@ Este ejercicio incluye las siguientes tareas:
 1. Pruebe y compruebe el código refactorizado.
 1. Confirme los cambios y cierre las incidencias.
 
+> **NOTA**: Para ahorrar tiempo durante este ejercicio de entrenamiento, resolverá un grupo de incidencias e insertará actualizaciones en una sola confirmación. El procesamiento de incidencias por lotes no es un procedimiento recomendado. Microsoft y GitHub recomiendan resolver cada incidencia de forma individual con distintas confirmaciones en lugar de procesarlas por lotes. La resolución de incidencias de forma individual proporciona una mejor rastreabilidad, revisiones de código más sencillas y opciones de reversión más seguras si surgen problemas.
+
 ### Importación del repositorio ContosoShopEasy
 
-GitHub Importer le permite crear una copia de un repositorio existente en su propia cuenta de GitHub, lo que le proporciona control total sobre la copia importada. Aunque GitHub Importer no migra incidencias, solicitudes de incorporación de cambios o discusiones, el repositorio incluye un flujo de trabajo de Acciones de GitHub que automatiza la creación de incidencias en función del código base.
+GitHub Importer le permite crear una copia de un repositorio existente en su propia cuenta de GitHub, lo que le proporciona control total sobre la copia importada. Aunque GitHub Importer no migra incidencias, solicitudes de incorporación de cambios o discusiones, importa flujos de trabajo de Acciones de GitHub. El repositorio que importe incluye un flujo de trabajo de Acciones de GitHub que crea incidencias asociadas con el código base.
 
-En esta tarea, importará el proyecto ContosoShopEasy y creará incidencias de GitHub que reflejan las vulnerabilidades de seguridad presentes en el código base.
+En esta tarea, importará el repositorio ContosoShopEasy y ejecutará un flujo de trabajo para crear incidencias de GitHub para las vulnerabilidades de seguridad incluidas en el código base.
 
 Realice los pasos siguientes para completar esta tarea:
 
@@ -102,95 +104,93 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. En el campo**Nombre del repositorio**, escriba**ResolveGitHubIssues** y seleccione**Comenzar importación**.
 
-    GitHub crea un nuevo repositorio en su cuenta con los archivos de proyecto de ContosoShopEasy.
+    GitHub crea el nuevo repositorio en su cuenta con los archivos de proyecto de ContosoShopEasy.
 
-    > **NOTA**: El proceso de importación puede tardar unos minutos en finalizar.
+    > **NOTA**: El repositorio puede tardar un minuto o dos en importarse.
 
-1. Espere a que finalice y abra el nuevo repositorio.
+1. Espere a que finalice el proceso de importación y abra el nuevo repositorio.
 
-1. Vaya a la pestaña "Acciones" del repositorio y, a continuación, ejecute el flujo de trabajo de Acciones de GitHub**Create ContosoShopShopEasy Training Issues**.
+1. Abra la pestaña Acciones del repositorio.
 
-1. Escriba "CREATE" para confirmar la creación de la incidencia.
+1. En el lado izquierdo de**Todos los flujos de trabajo**, seleccione el flujo de trabajo**Create ContosoShopEasy Training Issues** y, a continuación, seleccione**Ejecutar flujo de trabajo**.
 
-    El flujo de trabajo creará incidencias en el repositorio para cada vulnerabilidad de seguridad identificada en el código base.
+1. En el cuadro de diálogo de flujo de trabajo que aparece, escriba**CREATE** y, a continuación, seleccione**Ejecutar flujo de trabajo**.
 
-    Incidencias de prioridad crítica
+1. Supervise el progreso en pantalla del flujo de trabajo.
 
-    1. **Credenciales de administrador codificadas de forma rígida**  
-        Quite el nombre de usuario y la contraseña del administrador codificado de forma rígida.
+    Después de un momento, la página se actualizará y mostrará una barra de progreso. El flujo de trabajo debe completarse correctamente en menos de un minuto.
 
-    1. **Almacenamiento de datos de tarjetas de crédito**  
-        Corrija las infracciones de cumplimiento de PCI DSS.
+1. Asegúrese de que el flujo de trabajo se completa correctamente antes de continuar.
 
-    Incidencias de prioridad alta
+    Una marca de verificación en un círculo verde a la izquierda del nombre del flujo de trabajo indica que el flujo de trabajo se ejecutó correctamente.
 
-    1. **Vulnerabilidad de inyección de código SQL**  
-        Proteja la funcionalidad de búsqueda de productos.
-
-    1. **Hash de contraseña no segura**  
-        Reemplace MD5 por hash seguro.
-
-    1. **Información confidencial en los registros**  
-        Elimine contraseñas o tarjetas de la salida de depuración.
-
-    1. **Omisión de validación de entrada**  
-        Corrija la validación que detecta amenazas, pero las permite.
-
-    Incidencias de prioridad media
-
-    1. **Tokens de sesión predecibles**  
-        Implemente tokens criptográficos seguros.
-
-    1. **Validación de correo electrónico poco seguro**  
-        Mejore la validación del formato de correo electrónico.
-
-    1. **Requisitos de contraseña insuficientes**  
-        Refuerce las reglas de complejidad de contraseñas.
-
-    Incidencias de prioridad baja
-
-    1. **Divulgación de información**  
-         Reduzca los mensajes de error detallados y la salida de depuración.
+    Si ve una X en un círculo rojo a la izquierda del nombre del flujo de trabajo, significa que se produjo un error en el flujo de trabajo. Si el flujo de trabajo no se ejecuta correctamente, asegúrese de que seleccionó la cuenta al importar el repositorio y de que la cuenta tiene permisos de lectura y escritura. Puede usar la característica**Chat with Copilot** de GitHub para ayudar a diagnosticar el problema.
 
 ### Revisión de las incidencias en GitHub
 
 Las incidencias de GitHub sirven como un sistema de seguimiento centralizado para errores, vulnerabilidades de seguridad y solicitudes de mejora. Cada incidencia proporciona contexto sobre el problema, su gravedad y el posible impacto en la aplicación. Comprender estas incidencias antes de profundizar en el código ayuda a establecer prioridades y garantiza una corrección completa.
 
-En esta tarea, revisará las incidencias abiertas del proyecto ContosoShopEasy y comprenderá las vulnerabilidades de seguridad que se deben solucionar.
+En esta tarea, revisará las incidencias de GitHub y examinará las vulnerabilidades de seguridad que deben solucionarse.
 
 Realice los pasos siguientes para completar esta tarea:
 
-1. Vaya al repositorio ResolveGitHubIssues en GitHub.
+1. Seleccione la pestaña**Incidencias** del repositorio y, a continuación, dedique un minuto a revisar la página de incidencias.
 
-1. Seleccione la pestaña**Incidencias** para ver todas las incidencias abiertas.
+    Debería ver una lista con 10 incidencias. Observe que las incidencias se definen como errores y que se les ha asignado un nivel de prioridad.
 
-1. Revise cada descripción de las incidencias y tenga en cuenta que el flujo de trabajo ha creado 10 incidencias de seguridad específicas organizadas por prioridad:
+1. Para mostrar solo las incidencias críticas, seleccione la lista desplegable**Etiquetas** y, a continuación, seleccione la etiqueta**crítica**.
 
-    **Incidencias de prioridad crítica**: representan los riesgos de seguridad más graves que podrían comprometer por completo el sistema o llevar a infracciones normativas.
+    La lista de incidencias se filtra para mostrar solo las incidencias críticas.
 
-    **Incidencias de alta prioridad**: son vulnerabilidades de seguridad graves que podrían permitir el acceso no autorizado o infracciones de los datos.
+    - **🔐 Corregir las infracciones de almacenamiento de datos de tarjetas de crédito**  
 
-    **Incidencias de prioridad media**: representan puntos débiles de seguridad que podrían aprovecharse, pero su impacto inmediato es menor.
+    - **🔐 Eliminar las credenciales de administrador codificadas de forma rígida**  
 
-    **Incidencias de prioridad baja**: se trata de mejoras de seguridad que reducen la pérdida de información y mejoran la posición general de seguridad.
+1. Para mostrar solo las incidencias de alta prioridad, seleccione la lista desplegable**Etiquetas**, anule la selección de**crítico** y, a continuación, seleccione la etiqueta**alta prioridad**.
 
-1. Tenga en cuenta que cada incidencia incluye descripciones detalladas de la vulnerabilidad, la ubicación específica del código, ejemplos de código vulnerable, riesgos de seguridad y criterios de aceptación para las correcciones.
+    La lista de incidencias se filtra para mostrar solo las incidencias de alta prioridad.
 
-1. Revise la incidencia**ContosoShopShop Security Training - Issue Summary**, que proporciona información general sobre todas las vulnerabilidades y los objetivos de aprendizaje.
+    - **🔐 Corregir la omisión de seguridad de validación de entrada**  
 
-1. Tenga en cuenta que estas incidencias representan vulnerabilidades de seguridad comunes que se encuentran en aplicaciones reales y se alinean con las directrices de seguridad de OWASP.
+    - **🔐 Eliminar los datos confidenciales del registro de depuración**  
+
+    - **🔐 Corregir la vulnerabilidad de inyección de código SQL en la búsqueda de productos**  
+
+    - **🔐 Reemplazar el hash de contraseña MD5 por alternativa segura**  
+
+1. Seleccione la incidencia**Corregir la vulnerabilidad de inyección de código SQL en la búsqueda de productos**.
+
+1. Dedique un minuto a revisar los detalles de la incidencia.
+
+    Los detalles de la incidencia deben describir el problema y la corrección esperada.
+
+    > **NOTA**: El proceso usado para generar incidencias, incluidos los procesos manuales frente a los automatizados, afecta a la calidad general y la precisión de las descripciones de las incidencias. Las incidencias incluidas en este entrenamiento se escribieron mediante el modo agente de GitHub Copilot después de que el agente revisara el código base. GitHub Copilot generó descripciones muy detalladas de las vulnerabilidades, ubicaciones de código, ejemplos del código vulnerable, riesgos de seguridad y criterios de aceptación para las correcciones.
+
+1. Observe que no se ha asignado a nadie a la incidencia.
+
+1. Vuelva a la pestaña Incidencias y borre los filtros.
+
+1. Seleccione todas las incidencias y, a continuación, use la lista desplegable**Asignar** para asignárselos a sí mismo.
+
+    Asignarse las incidencias a sí mismo ayuda a realizar un seguimiento del progreso a medida que trabaja en el proceso de corrección.
 
 ### Clonación del repositorio y revisión del código base
 
 Comprender la estructura y la funcionalidad de un código base existente es esencial antes de implementar correcciones de seguridad. La aplicación ContosoShopEasy sigue una arquitectura en capas típica de las aplicaciones empresariales, con una separación clara entre modelos, servicios, acceso a datos y componentes de seguridad. Revisar la estructura de código y ejecutar la aplicación ayuda a establecer una línea base para las pruebas después de implementar mejoras de seguridad.
 
-En esta tarea, clonará el repositorio ContosoShopEasy, examinará la estructura del proyecto y observará el comportamiento actual de la aplicación.
+En esta tarea, clonará el repositorio ContosoShopEasy, examinará la estructura del proyecto, observará el comportamiento actual de la aplicación y revisará las vulnerabilidades de seguridad.
 
 Realice los pasos siguientes para completar esta tarea:
 
+1. Abra la pestaña Código del repositorio.
+
 1. Clone el repositorio ResolveGitHubIssues en el entorno de desarrollo local.
 
-    Abra una ventana de terminal y ejecute el comando siguiente y reemplace`your-username` por el nombre de usuario de GitHub:
+    Por ejemplo, puede usar los pasos siguientes para clonar el repositorio mediante la CLI de Git:
+
+    1. Copie la dirección URL del repositorio seleccionando el botón**Código** y, a continuación, copie la dirección URL HTTPS.
+
+    1. Abra una ventana de terminal, vaya al directorio donde desea clonar el repositorio y ejecute el siguiente comando (reemplazando**your-username** por su nombre de usuario de GitHub):
 
     ```bash
     git clone https://github.com/your-username/ResolveGitHubIssues.git
@@ -200,15 +200,20 @@ Realice los pasos siguientes para completar esta tarea:
 
     Vaya a la carpeta del repositorio y ábrala en Visual Studio Code. Asegúrese de que tiene instaladas y habilitadas las extensiones GitHub Copilot y GitHub Copilot Chat.
 
-1. Examine la estructura del proyecto en el Explorador de soluciones.
+1. Examine la estructura del proyecto en la vista EXPLORER.
 
     La aplicación ContosoShopEasy sigue una arquitectura en capas con los siguientes componentes:
 
-    - **Models/**: Contiene modelos de datos para`Product.cs`,`User.cs`,`Order.cs` y`Category.cs`
-    - **Services/**: Contiene lógica de negocios en`ProductService.cs`,`UserService.cs`,`PaymentService.cs` y`OrderService.cs`
-    - **Data/**: Contiene repositorios de datos en`ProductRepository.cs`,`UserRepository.cs` y`OrderRepository.cs`
-    - **Security/**: Contiene la lógica de validación de seguridad en`SecurityValidator.cs`
+    - **Models/**: Contiene modelos de datos para**Category.cs**,**Order.cs**,**Product.cs** y**User.cs**.
+
+    - **Services/**: Contiene lógica de negocios en**OrderService.cs**,**PaymentService.cs**,**ProductService.cs** y**UserService.cs**.
+
+    - **Data/**: Contiene repositorios de datos en**OrderRepository.cs**,**ProductRepository.cs** y**UserRepository.cs**.
+
+    - **Security/**: Contiene lógica de validación de seguridad en**SecurityValidator.cs**
+
     - **Program.cs**: Punto de entrada principal de la aplicación con configuración de inserción de dependencias
+
     - **README.md**: Documentación que explica el propósito y las vulnerabilidades de la aplicación
 
 1. Compile y ejecute la aplicación para observar su comportamiento actual.
@@ -221,133 +226,279 @@ Realice los pasos siguientes para completar esta tarea:
     dotnet run
     ```
 
-    La aplicación mostrará una demostración completa de la funcionalidad de comercio electrónico, incluida una auditoría de seguridad que revela las vulnerabilidades intencionadas.
+    La aplicación ejecuta una simulación del flujo de trabajo de comercio electrónico que expone vulnerabilidades de seguridad a través del registro detallado de la consola.
 
-1. Revise la salida de la consola para identificar el registro relacionado con la seguridad.
+1. Revise la salida de la consola.
 
     Observe que la aplicación registra información confidencial, como contraseñas, números de tarjeta de crédito, credenciales de administrador y detalles internos del sistema. Esta salida es una prueba clara de los problemas de seguridad que se deben solucionar.
 
-1. Dedique un minuto a examinar el código asociado a cada vulnerabilidad de seguridad tal como se define en las incidencias de GitHub:
+    > **NOTA**: La lógica de código y el registro en esta aplicación están diseñados para exponer vulnerabilidades de seguridad. Aunque la implementación se ha intentado, los registros resaltan los problemas de seguridad que son comunes en las aplicaciones reales.
 
-    - **Inyección de código SQL** (n.º 1): método`ProductService.cs` -`SearchProducts` (en torno a la línea 35)
-    - **Hash de contraseña no segura** (n.º 2): método`UserService.cs` -`GetMd5Hash` (en torno a la línea 55)
-    - **Datos confidenciales en los registros** (n.º 3): varios archivos: métodos de registro, inicio de sesión o pago de`UserService.cs``PaymentService.cs`.
-    - **Credenciales de administrador codificadas de forma rígida** (n.º 4):`SecurityValidator.cs`constantes de credenciales de administrador (líneas 7-9)
-    - **Almacenamiento de datos de tarjetas de crédito** (n.º 5):`Models/Order.cs`: propiedades CardNumber y CVV
-    - **Omisión de validación de entrada** (n.º 6): método que siempre devuelve true`SecurityValidator.cs` -`ValidateInput`
-    - **Tokens de sesión predecibles** (n.º 7): método`SecurityValidator.cs` -`GenerateSessionToken`
-    - **Validación de correo electrónico poco seguro** (n.º 8): método`SecurityValidator.cs` -`ValidateEmail`
-    - **Requisitos de contraseña insuficientes** (n.º 9): método`SecurityValidator.cs` -`ValidatePasswordStrength`
-    - **Divulgación de información** (n.º 10): varias clases con el registro detallado de depuración y el método de auditoría de seguridad
+1. Para comenzar un proceso de revisión que identifique las vulnerabilidades de seguridad en el código base, expanda la carpeta**Models** y abra el archivo**Order.cs**.
+
+1. Desplácese hacia abajo hasta encontrar la clase**PaymentInfo**.
+
+    Observe los comentarios relativos a las propiedades CardNumber y CVV. Este código está relacionado con la incidencia "Corregir infracciones de almacenamiento de datos de tarjetas de crédito".
+
+1. Expanda la carpeta**Security** y abra el archivo**SecurityValidator.cs**.
+
+1. Dedique un minuto a buscar las siguientes incidencias de seguridad:
+
+    - Cerca de la parte superior del archivo, observe el comentario relacionado con las constantes de credenciales de administrador (líneas 7-9). Este código está relacionado con la incidencia "Eliminar las credenciales de administrador codificadas de forma rígida".
+
+    - Busque el método ValidateInput y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Corregir la omisión de seguridad de validación de entrada".
+
+    - Busque el método ValidateEmail y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Mejorar la seguridad de validación del correo electrónico".
+
+    - Busque el método ValidatePasswordStrength y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Reforzar los requisitos de seguridad de contraseñas".
+
+    - Busque el método GenerateSessionToken y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Corregir la generación de tokens de sesión predecibles".
+
+    - Busque el método RunSecurityAudit y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Reducir la divulgación de información en los mensajes de error".
+
+1. Expanda la carpeta**Services** y abra el archivo**UserService.cs**.
+
+1. Dedique un minuto a buscar las siguientes incidencias de seguridad:
+
+    - Busque los métodos RegisterUser, LoginUser y ValidateUserInput y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con las incidencias "Eliminar los datos confidenciales del registro de depuración".
+    - Busque el método GetMd5Hash y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Reemplazar el hash de contraseña MD5 por alternativa segura".
+
+1. Abra el archivo**PaymentService.cs**.
+
+1. Dedique un minuto a revisar los comentarios que describen las vulnerabilidades de seguridad.
+
+    Este código está relacionado con la incidencia "Eliminar los datos confidenciales del registro de depuración".
+
+1. Abra el archivo**ProductService.cs**.
+
+1. Dedique un minuto a revisar el método SearchProducts.
+
+    Este código está relacionado con la incidencia "Corregir la vulnerabilidad de inyección de código SQL en la búsqueda de productos".
 
 ### Análisis de las incidencias con el modo Preguntar de GitHub Copilot
 
 El modo Preguntar de GitHub Copilot proporciona funcionalidades de análisis de código inteligentes que pueden ayudar a identificar vulnerabilidades de seguridad, comprender su posible impacto y sugerir estrategias de corrección. Al analizar sistemáticamente cada problema de seguridad, puede desarrollar una comprensión completa de los problemas antes de implementar correcciones. Este enfoque garantiza que las soluciones aborden las causas principales en lugar de solo los síntomas.
 
-En esta tarea, usará el modo Preguntar de GitHub Copilot para analizar sistemáticamente las vulnerabilidades de seguridad, empezando por las incidencias más críticas y siguiendo hacia abajo en orden de prioridad.
+En esta tarea, usará el modo Preguntar de GitHub Copilot para analizar sistemáticamente las vulnerabilidades de seguridad.
 
 Realice los pasos siguientes para completar esta tarea:
 
 1. Abra la vista GitHub Copilot Chat y asegúrese de que el modo Preguntar esté seleccionado.
 
-    Si la vista Chat aún no está abierta, seleccione el icono**Chat** situado en la parte superior de la ventana de Visual Studio Code. Compruebe que el modo de chat está establecido en**Preguntar** y use el modelo**GPT-4.1** para el análisis de seguridad complejo.
+    Si la vista Chat aún no está abierta, seleccione el icono**Chat** situado en la parte superior de la ventana de Visual Studio Code. Compruebe que el modo de chat está establecido en**Preguntar** y que está usando el modelo**GPT-4.1**.
 
-1. Comience con el análisis de vulnerabilidades de inyección de código SQL.
+1. Abra el archivo**ProductService.cs** y busque el método**SearchProducts**.
 
-    Abra el archivo`ProductService.cs` y busque el método`SearchProducts`. Seleccione todo el método y agréguelo al contexto de chat mediante arrastrar y colocar, o bien haga clic con el botón derecho y seleccione**Agregar al chat**.
+1. En el editor de código, seleccione todo el método**SearchProducts**.
 
-1. Pida a GitHub Copilot que analice la vulnerabilidad de inyección de código SQL.
+    Al seleccionar código en el editor, el chat se centra en ese contexto. GitHub Copilot usa el código seleccionado para proporcionar análisis y recomendaciones pertinentes.
 
-    Envíe la indicación siguiente para analizar el problema de seguridad:
+1. Pida a GitHub Copilot que analice el código de vulnerabilidad de inyección de código SQL.
+
+    Por ejemplo, puede enviar la siguiente indicación:
 
     ```text
     Analyze the SearchProducts method for security vulnerabilities. What makes this code susceptible to SQL injection attacks, and what are the potential consequences if an attacker exploits this vulnerability?
     ```
 
-1. Revise el análisis de GitHub Copilot y solicite instrucciones de corrección específicas.
+1. Revise el análisis de GitHub Copilot y, a continuación, solicite instrucciones de corrección específicas.
 
-    Después de revisar el análisis inicial, solicite correcciones específicas:
+    Por ejemplo, después de revisar el análisis inicial, puede enviar la siguiente indicación:
 
     ```text
     How can I modify this method to prevent SQL injection attacks? What secure coding practices should I implement to safely handle user input in database queries?
     ```
 
-1. Analice la vulnerabilidad de hash de contraseña no segura.
+1. Dedique un minuto a revisar las sugerencias de corrección de GitHub Copilot.
 
-    Abra el archivo`UserService.cs` y busque el método`GetMd5Hash`. Agregue este método al contexto chat y envíe la indicación siguiente:
+1. Abra el archivo**UserService.cs** y busque el método**GetMd5Hash**.
+
+1. En el editor de código, seleccione todo el método**GetMd5Hash**.
+
+1. Pida a GitHub Copilot que analice la vulnerabilidad de hash de contraseña no segura.
+
+    Por ejemplo, puede enviar la siguiente indicación:
 
     ```text
     Why is MD5 hashing unsuitable for password storage? What are the security risks of using MD5 for passwords, and what stronger alternatives should I use instead?
     ```
 
-1. Pida instrucciones específicas sobre la implementación de hash de contraseñas seguras.
+1. Revise el análisis de GitHub Copilot y, a continuación, solicite instrucciones de corrección específicas.
+
+    Por ejemplo, después de revisar el análisis inicial, puede enviar la siguiente indicación:
 
     ```text
     Show me how to implement secure password hashing using bcrypt or PBKDF2. What additional security measures should I implement for password handling?
     ```
 
-1. Analice las incidencias de registro de datos confidenciales (incidencia n.º 3).
+1. Dedique un minuto a revisar las sugerencias de corrección de GitHub Copilot.
 
-    Abra los archivos`PaymentService.cs` y`UserService.cs` y busque métodos que registren información confidencial. Agregue métodos pertinentes al contexto de chat y pregunte:
+1. En el archivo**UserService.cs**, busque los métodos**RegisterUser** y**LoginUser**.
+
+    Estos métodos registran la información del usuario. El registro de información confidencial es una vulnerabilidad de seguridad.
+
+1. En el editor de código, seleccione ambos métodos.
+
+1. Pida a GitHub Copilot que analice la vulnerabilidad de registro de datos confidenciales.
+
+    Por ejemplo, puede enviar la siguiente indicación:
 
     ```text
-    What sensitive information is being logged in the payment processing and user registration methods? Why is logging passwords, credit card numbers, and CVV codes a security risk?
+    What sensitive information is being logged in the user registration and login methods? Why is logging passwords and user data a security risk?
     ```
 
-1. Examine la vulnerabilidad de credenciales codificadas de forma rígida (incidencia n.º 4).
+1. Revise el análisis de GitHub Copilot y, a continuación, solicite instrucciones de corrección específicas.
 
-    Abra el archivo`SecurityValidator.cs` y busque las constantes de credenciales de administrador en torno a las líneas 7-9. Agregue el código pertinente al contexto de chat y pregunte lo siguiente:
+    Por ejemplo, después de revisar el análisis inicial, puede enviar la siguiente indicación:
+
+    ```text
+    How can I modify these methods to prevent sensitive data logging? What secure logging practices should I implement to protect user information?
+    ```
+
+1. Dedique un minuto a revisar las sugerencias de corrección de GitHub Copilot.
+
+1. Abra el archivo**PaymentService.cs** y busque el método**ProcessPayment**.
+
+1. En el editor de código, seleccione todo el método**ProcessPayment**.
+
+1. Pida a GitHub Copilot que analice el registro de datos de pago confidenciales.
+
+    Por ejemplo, puede enviar la siguiente indicación:
+
+    ```text
+    What sensitive payment information is being logged in this method? Why is logging credit card numbers and CVV codes a security risk?
+    ```
+
+1. Abra el archivo**SecurityValidator.cs** y busque las constantes de credenciales de administrador cerca de la parte superior del archivo.
+
+1. En el editor de código, seleccione las constantes de credenciales de administrador codificadas de forma rígida.
+
+1. Pida a GitHub Copilot que analice la vulnerabilidad de credenciales codificadas de forma rígida.
+
+    Por ejemplo, puede enviar la siguiente indicación:
 
     ```text
     What security risks are created by hardcoding admin credentials in source code? How should application credentials be managed securely in production environments?
     ```
 
-1. Analice las incidencias de almacenamiento de datos de tarjetas de crédito (incidencia n.º 5).
+1. Revise el análisis de GitHub Copilot y, a continuación, solicite instrucciones de corrección específicas.
 
-    Abra el archivo`Models/Order.cs` y examine las propiedades CardNumber y CVV. Agregue este código al contexto de chat y pregunte:
+    Por ejemplo, después de revisar el análisis inicial, puede enviar la siguiente indicación:
 
     ```text
-    Why is storing full credit card numbers and CVV codes a PCI DSS compliance violation? What are the proper ways to handle payment card data securely?
+    What are best practices for managing application credentials securely? How can I implement secure credential management in this application?
     ```
 
-1. Revise la omisión de validación de entrada (incidencia n.º 6).
+1. Dedique un minuto a revisar las sugerencias de corrección de GitHub Copilot.
 
-    Céntrese en el método`ValidateInput` en`SecurityValidator.cs` que siempre devuelve true a pesar de detectar amenazas. Preguntar:
+1. En el archivo**SecurityValidator.cs**, busque el método**ValidateInput**.
+
+1. En el editor de código, seleccione todo el método**ValidateInput**.
+
+1. Pida a GitHub Copilot que analice la vulnerabilidad de omisión de validación de entrada.
+
+    Por ejemplo, puede enviar la siguiente indicación:
 
     ```text
     What makes this input validation method ineffective? Why does it detect dangerous input but still return true, and how should proper input validation work?
     ```
 
-1. Examine la generación de tokens de sesión predecibles (incidencia n.º 7).
+1. Revise el análisis de GitHub Copilot y, a continuación, solicite instrucciones de corrección específicas.
 
-    Céntrese en el método`GenerateSessionToken` de`SecurityValidator.cs` y pregunte lo siguiente:
+    Por ejemplo, después de revisar el análisis inicial, puede enviar la siguiente indicación:
+
+    ```text
+    How can I modify this method to implement effective input validation? What secure coding practices should I follow to prevent input validation bypass vulnerabilities?
+    ```
+
+1. Dedique un minuto a revisar las sugerencias de corrección de GitHub Copilot.
+
+1. En el archivo**SecurityValidator.cs**, busque el método**GenerateSessionToken**.
+
+1. En el editor de código, seleccione todo el método**GenerateSessionToken**.
+
+1. Pida a GitHub Copilot que analice la vulnerabilidad de generación de tokens de sesión predecibles.
+
+    Por ejemplo, puede enviar la siguiente indicación:
 
     ```text
     Why are predictable session tokens based on username and timestamp a security risk? How should secure, unpredictable session tokens be generated?
     ```
 
-1. Analice la validación de correo electrónico poco seguro (incidencia n.º 8).
+1. Revise el análisis de GitHub Copilot y, a continuación, solicite instrucciones de corrección específicas.
 
-    Revise el método`ValidateEmail` en`SecurityValidator.cs` que solo comprueba los caracteres "@" and "". Preguntar:
+    Por ejemplo, después de revisar el análisis inicial, puede enviar la siguiente indicación:
+
+    ```text
+    How can I modify this method to generate secure, unpredictable session tokens? What cryptographic techniques should I use to enhance session token security?
+    ```
+
+1. Dedique un minuto a revisar las sugerencias de corrección de GitHub Copilot.
+
+1. En el archivo**SecurityValidator.cs**, busque el método**ValidateEmail**.
+
+1. En el editor de código, seleccione todo el método**ValidateEmail**.
+
+1. Pida a GitHub Copilot que analice la vulnerabilidad de validación de correo electrónico poco seguro.
+
+    Por ejemplo, puede enviar la siguiente indicación:
 
     ```text
     What makes this email validation insufficient? What are the security risks of weak email validation, and how should proper email validation be implemented?
     ```
 
-1. Revise los requisitos de contraseña insuficientes (incidencia n.º 9).
+1. Revise el análisis de GitHub Copilot y, a continuación, solicite instrucciones de corrección específicas.
 
-    Examine el método`ValidatePasswordStrength` en`SecurityValidator.cs` que solo requiere 4 caracteres. Preguntar:
+    Por ejemplo, después de revisar el análisis inicial, puede enviar la siguiente indicación:
+
+    ```text
+    How can I modify this method to implement robust email validation? What techniques should I use to ensure email addresses are properly validated?
+    ```
+
+1. En el archivo**SecurityValidator.cs**, busque el método**ValidatePasswordStrength**.
+
+1. En el editor de código, seleccione todo el método**ValidatePasswordStrength**.
+
+1. Pida a GitHub Copilot que analice la vulnerabilidad de los requisitos de contraseña insuficientes.
+
+    Por ejemplo, puede enviar la siguiente indicación:
 
     ```text
     Why are these password requirements insufficient for security? What are proper password complexity requirements, and how should password strength be validated?
     ```
 
-1. Analice las incidencias de divulgación de información (incidencia n.º 10).
+1. Revise el análisis de GitHub Copilot y, a continuación, solicite instrucciones de corrección específicas.
 
-    Seleccione el método`RunSecurityAudit` y otro registro de depuración en distintos archivos y pregunte:
+    Por ejemplo, después de revisar el análisis inicial, puede enviar la siguiente indicación:
 
     ```text
-    How does the security audit method and excessive debug logging create information disclosure vulnerabilities? What information should never be exposed in logs or error messages?
+    How can I modify this method to enforce strong password requirements? What best practices should I follow for password strength validation?
+    ```
+
+1. Dedique un minuto a revisar las sugerencias de corrección de GitHub Copilot.
+
+1. En la carpeta**Models**, abra el archivo**Order.cs** y busque la clase**PaymentInfo**.
+
+1. En el editor de código, seleccione las propiedades**CardNumber** y**CVV** dentro de la clase**PaymentInfo**.
+
+1. Pida a GitHub Copilot que analice las infracciones de almacenamiento de datos de tarjetas de crédito.
+
+    Por ejemplo, puede enviar la siguiente indicación:
+
+    ```text
+    Why is storing full credit card numbers and CVV codes a PCI DSS compliance violation? What are the proper ways to handle payment card data securely?
+    ```
+
+1. Vuelva al archivo**SecurityValidator.cs** y busque el método**RunSecurityAudit**.
+
+1. En el editor de código, seleccione todo el método**RunSecurityAudit**.
+
+1. Pida a GitHub Copilot que analice la vulnerabilidad de divulgación de información.
+
+    Por ejemplo, puede enviar la siguiente indicación:
+
+    ```text
+    How does the security audit method create information disclosure vulnerabilities? What information should never be exposed in logs or error messages?
     ```
 
 1. Documente los resultados del análisis como referencia durante la fase de corrección.
@@ -358,19 +509,52 @@ Realice los pasos siguientes para completar esta tarea:
 
 El modo Agente de GitHub Copilot permite la implementación autónoma de correcciones de seguridad complejas en varios archivos y métodos. A diferencia del modo Preguntar, que proporciona análisis y recomendaciones, el modo Agente puede modificar directamente el código para implementar mejoras de seguridad. Este enfoque es especialmente eficaz para la corrección sistemática de la seguridad, donde es necesario abordar de forma coherente varias vulnerabilidades relacionadas.
 
-> **NOTA**: Para ahorrar tiempo durante este ejercicio de laboratorio, resolverá y probará una colección de incidencias e insertará actualizaciones en una sola confirmación. El procesamiento por lotes de incidencias de esta forma no es un procedimiento recomendado. Microsoft y GitHub recomiendan resolver cada incidencia de forma individual con distintas confirmaciones en lugar de procesarlas por lotes. La resolución de incidencias de forma individual proporciona una mejor rastreabilidad, revisiones de código más sencillas y opciones de reversión más seguras si surgen problemas. Cada corrección debe probarse exhaustivamente antes de pasar a la siguiente incidencia para asegurarse de que los cambios no introducen regresiones.
-
 En esta tarea, usará el modo Agente de GitHub Copilot para implementar correcciones de seguridad completas para todas las vulnerabilidades identificadas en la aplicación ContosoShopEasy.
 
 Realice los pasos siguientes para completar esta tarea:
 
 1. Cambie GitHub Copilot Chat al modo Agente.
 
-    En la vista Chat, localice el selector de modos y cambie de**Preguntar** a**Agente**. El modo Agente permite a GitHub Copilot realizar modificaciones directas de código en función de las instrucciones.
+    El modo Agente permite a GitHub Copilot realizar modificaciones directas de código en función de las instrucciones. El modo de agente sirve para establecer un contexto adecuado al revisar los archivos pertinentes en el código base. Puede agregar archivos y carpetas al contexto manualmente para asegurarse de que el agente tiene la información necesaria para realizar tareas complejas.
 
-1. Solucione primero la vulnerabilidad de inyección de código SQL.
+1. Dedique un minuto a considerar la estrategia de corrección.
 
-    Abra el archivo`ProductService.cs` y busque el método`SearchProducts`. Use la indicación siguiente para dar instrucciones al agente:
+    Según su análisis mediante el modo Preguntar de GitHub Copilot, planee su enfoque para abordar las vulnerabilidades de seguridad.
+
+    Las incidencias de GitHub, en orden, comenzando por la más crítica, son las siguientes:
+
+    1. 🔐 Corregir la vulnerabilidad de inyección de código SQL en la búsqueda de productos
+    1. 🔐 Reemplazar el hash de contraseña MD5 por alternativa segura
+    1. 🔐 Eliminar los datos confidenciales del registro de depuración
+    1. 🔐 Eliminar las credenciales de administrador codificadas de forma rígida
+    1. 🔐 Corregir las infracciones de almacenamiento de datos de tarjetas de crédito
+    1. 🔐 Corregir la omisión de seguridad de validación de entrada
+    1. 🔐 Corregir la generación de tokens de sesión predecibles
+    1. 🔐 Mejorar la seguridad de validación del correo electrónico
+    1. 🔐 Reforzar los requisitos de seguridad de contraseñas
+    1. 🔐 Reducir la divulgación de información en mensajes de error
+
+    Estas incidencias están asociadas a archivos y métodos específicos en el código base. Cuando se organiza por asociación de archivos, las incidencias son las siguientes:
+
+    - **ProductService.cs**: Incidencia n.º 1
+    - **UserService.cs**: Incidencias n.º 2 y n.º 3
+    - **PaymentService.cs**: Incidencia n.º 3
+    - **SecurityValidator.cs**: Incidencias n.º 4, nº. 6, n.º 7, n.º 8, n.º 9 y n.º 10
+    - **Modelos/Order.cs**: Incidencia n.º 5
+
+    La estrategia de corrección debe consistir en abordar cada incidencia sistemáticamente para garantizar así que las correcciones se implementan correctamente y de forma coherente.
+
+1. Cierre todos los archivos abiertos en el editor de código para empezar con un contexto limpio.
+
+1. Agregue el archivo**ProductService.cs** al contexto de chat.
+
+    La incidencia de inyección de código SQL está asociada al archivo ProductService.cs y al método SearchProducts en particular.
+
+1. Pida a GitHub Copilot que solucione primero la vulnerabilidad de inyección de código SQL.
+
+    El análisis mediante el modo Preguntar de GitHub Copilot reveló que el método construye consultas SQL mediante la entrada de usuario sin un correcto saneamiento.
+
+    El análisis se puede usar para construir una instrucción clara para que el agente corrija la vulnerabilidad. Por ejemplo, puede asignar la siguiente tarea al agente:
 
     ```text
     Fix the SQL injection vulnerability in the SearchProducts method. Remove the simulated SQL query logging that demonstrates the vulnerability, and implement proper input sanitization to safely handle search terms. Ensure the method still functions correctly for legitimate searches while preventing malicious input.
@@ -620,3 +804,7 @@ Realice los pasos siguientes para completar esta tarea:
 1. Revise el historial de confirmaciones para asegurarse de que todas las correcciones de seguridad están documentadas correctamente.
 
     Compruebe que los mensajes de confirmación describen claramente las mejoras de seguridad y proporcionan una buena pista de auditoría para futuras referencias.
+
+## Limpieza
+
+Ahora que ha terminado el ejercicio, dedique un minuto a asegurarse de que no ha realizado cambios en la cuenta de GitHub ni en la suscripción de GitHub Copilot que no quiere conservar. Por ejemplo, puede que quiera eliminar el repositorio ResolveGitHubIssues. Si usa un equipo local como entorno de laboratorio, puede archivar o eliminar el clon local del repositorio creado para este ejercicio.

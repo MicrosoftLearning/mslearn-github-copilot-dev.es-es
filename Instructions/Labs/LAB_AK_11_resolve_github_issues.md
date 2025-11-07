@@ -44,19 +44,19 @@ Si usa un entorno de laboratorio hospedado para este ejercicio:
 
     ```bash
 
-    git config --global user.name "John Doe"
+    git config --global user.name "Julie Miller"
 
     ```
 
     ```bash
 
-    git config --global user.email johndoe@example.com
+    git config --global user.email julie.miller@example.com
 
     ```
 
 ## Escenario del ejercicio
 
-Es desarrollador de software y trabaja para una empresa de consultoría. Los clientes necesitan ayuda para resolver incidencias en sus repositorios de GitHub. Debe asegurarse de que todas las incidencias se solucionan y cierran. Puede usar Visual Studio Code y GitHub Copilot como entorno de desarrollo. Se le asigna a la aplicación siguiente:
+Es desarrollador de software y trabaja para una empresa de consultoría. Los clientes necesitan ayuda para resolver incidencias en sus repositorios de GitHub. Debe asegurarse de que todas las incidencias se solucionan y cierran. Puede usar Visual Studio Code como entorno de desarrollo y GitHub Copilot para ayudar con las tareas de desarrollo. Se le asigna a la aplicación siguiente:
 
 - ContosoShopEasy: ContosoShopEasy es una aplicación de comercio electrónico que contiene varias vulnerabilidades de seguridad. Las vulnerabilidades representan incidencias comunes de seguridad encontradas en aplicaciones reales.
 
@@ -64,13 +64,13 @@ Este ejercicio incluye las siguientes tareas:
 
 1. Importe el repositorio ContosoShopEasy.
 1. Revise las incidencias en GitHub.
-1. Clone el repositorio y revise el código base.
+1. Clone el repositorio localmente y revise el código base.
 1. Analice las incidencias con el modo Preguntar de GitHub Copilot.
 1. Resuelva las incidencias con el modo Agente de GitHub Copilot.
 1. Pruebe y compruebe el código refactorizado.
 1. Confirme los cambios y cierre las incidencias.
 
-> **NOTA**: Para ahorrar tiempo durante este ejercicio de entrenamiento, resolverá un grupo de incidencias e insertará actualizaciones en una sola confirmación. El procesamiento de incidencias por lotes no es un procedimiento recomendado. Microsoft y GitHub recomiendan resolver cada incidencia de forma individual con distintas confirmaciones en lugar de procesarlas por lotes. La resolución de incidencias de forma individual proporciona una mejor rastreabilidad, revisiones de código más sencillas y opciones de reversión más seguras si surgen problemas.
+> **NOTA**: Para ahorrar tiempo durante este ejercicio de entrenamiento, resolverá un grupo de incidencias e insertará actualizaciones en una sola confirmación. El procesamiento de incidencias por lotes no es un procedimiento recomendado. Microsoft y GitHub recomiendan resolver cada problema individualmente con confirmaciones independientes. La resolución de incidencias de forma individual proporciona una mejor rastreabilidad, revisiones de código más sencillas y opciones de reversión más seguras si surgen problemas.
 
 ### Importación del repositorio ContosoShopEasy
 
@@ -82,9 +82,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Abra una ventana del explorador y vaya a GitHub.com.
 
-1. Inicie sesión en su cuenta de GitHub.
-
-1. Abra la pestaña de repositorios.
+1. Inicie sesión en su cuenta de GitHub y abra la pestaña de repositorios.
 
     Para abrir la pestaña de repositorios, haga clic en el icono de perfil de la esquina superior derecha y seleccione**Repositorios**.
 
@@ -106,9 +104,9 @@ Realice los pasos siguientes para completar esta tarea:
 
     GitHub crea el nuevo repositorio en su cuenta con los archivos de proyecto de ContosoShopEasy.
 
-    > **NOTA**: El repositorio puede tardar un minuto o dos en importarse.
+1. Espere a que se complete el proceso de importación y abra el nuevo repositorio.
 
-1. Espere a que finalice el proceso de importación y abra el nuevo repositorio.
+    > **NOTA**: El repositorio puede tardar un minuto o dos en importarse.
 
 1. Abra la pestaña Acciones del repositorio.
 
@@ -122,9 +120,9 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Asegúrese de que el flujo de trabajo se completa correctamente antes de continuar.
 
-    Una marca de verificación en un círculo verde a la izquierda del nombre del flujo de trabajo indica que el flujo de trabajo se ejecutó correctamente.
+    Una marca de verificación dentro de un círculo verde indica que el flujo de trabajo se ejecutó correctamente (debería aparecer a la izquierda del nombre del flujo de trabajo).
 
-    Si ve una X en un círculo rojo a la izquierda del nombre del flujo de trabajo, significa que se produjo un error en el flujo de trabajo. Si el flujo de trabajo no se ejecuta correctamente, asegúrese de que seleccionó la cuenta al importar el repositorio y de que la cuenta tiene permisos de lectura y escritura. Puede usar la característica**Chat with Copilot** de GitHub para ayudar a diagnosticar el problema.
+    Si aparece una X dentro de un círculo rojo a la izquierda del nombre del flujo de trabajo, significa que se produjo un error en el flujo de trabajo. Si el flujo de trabajo no se ejecuta correctamente, asegúrese de que seleccionó la cuenta al importar el repositorio y de que la cuenta tiene permisos de lectura y escritura. Puede usar la característica**Chat with Copilot** de GitHub para ayudar a diagnosticar el problema.
 
 ### Revisión de las incidencias en GitHub
 
@@ -142,9 +140,9 @@ Realice los pasos siguientes para completar esta tarea:
 
     La lista de incidencias se filtra para mostrar solo las incidencias críticas.
 
-    - **🔐 Corregir las infracciones de almacenamiento de datos de tarjetas de crédito**  
-
     - **🔐 Eliminar las credenciales de administrador codificadas de forma rígida**  
+
+    - **🔐 Corregir las infracciones de almacenamiento de datos de tarjetas de crédito**  
 
 1. Para mostrar solo las incidencias de alta prioridad, seleccione la lista desplegable**Etiquetas**, anule la selección de**crítico** y, a continuación, seleccione la etiqueta**alta prioridad**.
 
@@ -154,9 +152,9 @@ Realice los pasos siguientes para completar esta tarea:
 
     - **🔐 Eliminar los datos confidenciales del registro de depuración**  
 
-    - **🔐 Corregir la vulnerabilidad de inyección de código SQL en la búsqueda de productos**  
-
     - **🔐 Reemplazar el hash de contraseña MD5 por alternativa segura**  
+
+    - **🔐 Corregir la vulnerabilidad de inyección de código SQL en la búsqueda de productos**  
 
 1. Seleccione la incidencia**Corregir la vulnerabilidad de inyección de código SQL en la búsqueda de productos**.
 
@@ -164,7 +162,7 @@ Realice los pasos siguientes para completar esta tarea:
 
     Los detalles de la incidencia deben describir el problema y la corrección esperada.
 
-    > **NOTA**: El proceso usado para generar incidencias, incluidos los procesos manuales frente a los automatizados, afecta a la calidad general y la precisión de las descripciones de las incidencias. Las incidencias incluidas en este entrenamiento se escribieron mediante el modo agente de GitHub Copilot después de que el agente revisara el código base. GitHub Copilot generó descripciones muy detalladas de las vulnerabilidades, ubicaciones de código, ejemplos del código vulnerable, riesgos de seguridad y criterios de aceptación para las correcciones.
+    > **NOTA**: El proceso que se usa para documentar las incidencias, incluidos los procesos manuales frente a los automatizados con IA, puede afectar a la calidad general y la precisión de las descripciones de estas. Las incidencias incluidas en este entrenamiento se escribieron mediante el modo agente de GitHub Copilot después de que el agente revisara el código base. GitHub Copilot se puede usar para generar descripciones muy detalladas de las vulnerabilidades, ubicaciones de código, ejemplos del código vulnerable, riesgos de seguridad y criterios de aceptación para las correcciones.
 
 1. Observe que no se ha asignado a nadie a la incidencia.
 
@@ -172,17 +170,19 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Seleccione todas las incidencias y, a continuación, use la lista desplegable**Asignar** para asignárselos a sí mismo.
 
-    Asignarse las incidencias a sí mismo ayuda a realizar un seguimiento del progreso a medida que trabaja en el proceso de corrección.
+    Asignarse las incidencias a uno mismo ayuda a realizar un seguimiento del progreso a medida que se trabaja en el proceso de corrección.
 
-### Clonación del repositorio y revisión del código base
+### Clonación local del repositorio y revisión del código base
 
-Comprender la estructura y la funcionalidad de un código base existente es esencial antes de implementar correcciones de seguridad. La aplicación ContosoShopEasy sigue una arquitectura en capas típica de las aplicaciones empresariales, con una separación clara entre modelos, servicios, acceso a datos y componentes de seguridad. Revisar la estructura de código y ejecutar la aplicación ayuda a establecer una línea base para las pruebas después de implementar mejoras de seguridad.
+La aplicación ContosoShopEasy sigue una arquitectura en capas típica de las aplicaciones empresariales, con una separación clara entre modelos, servicios, acceso a datos y componentes de seguridad.
 
-En esta tarea, clonará el repositorio ContosoShopEasy, examinará la estructura del proyecto, observará el comportamiento actual de la aplicación y revisará las vulnerabilidades de seguridad.
+Antes de intentar resolver incidencias de seguridad, es esencial tomarse el tiempo necesario para comprender la estructura, el comportamiento y las características básicas de un código base existente.
+
+En esta tarea, creará un clon local del repositorio, examinará la estructura del proyecto en Visual Studio Code, revisará la salida de la consola de la aplicación y buscará las vulnerabilidades de seguridad.
 
 Realice los pasos siguientes para completar esta tarea:
 
-1. Abra la pestaña Código del repositorio.
+1. Vuelva a la página raíz del repositorio (pestaña Código).
 
 1. Clone el repositorio ResolveGitHubIssues en el entorno de desarrollo local.
 
@@ -190,15 +190,17 @@ Realice los pasos siguientes para completar esta tarea:
 
     1. Copie la dirección URL del repositorio seleccionando el botón**Código** y, a continuación, copie la dirección URL HTTPS.
 
-    1. Abra una ventana de terminal, vaya al directorio donde desea clonar el repositorio y ejecute el siguiente comando (reemplazando**your-username** por su nombre de usuario de GitHub):
+    1. Abra una ventana de terminal, vaya al directorio donde desea clonar el repositorio y, a continuación, ejecute un comando "git clone" que use la dirección URL del repositorio.
 
-    ```bash
-    git clone https://github.com/your-username/ResolveGitHubIssues.git
-    ```
+        Por ejemplo, abra Windows PowerShell, vaya a C:\TrainingProjects y ejecute el siguiente comando (reemplazando**your-username** por el nombre de usuario de GitHub):
+
+        ```bash
+        git clone https://github.com/your-username/ResolveGitHubIssues.git
+        ```
 
 1. Abra el repositorio clonado en Visual Studio Code.
 
-    Vaya a la carpeta del repositorio y ábrala en Visual Studio Code. Asegúrese de que tiene instaladas y habilitadas las extensiones GitHub Copilot y GitHub Copilot Chat.
+    Asegúrese de que usa la versión más reciente de Visual Studio Code y de que tiene instaladas y habilitadas las extensiones de GitHub Copilot y GitHub Copilot Chat.
 
 1. Examine la estructura del proyecto en la vista EXPLORER.
 
@@ -216,9 +218,9 @@ Realice los pasos siguientes para completar esta tarea:
 
     - **README.md**: Documentación que explica el propósito y las vulnerabilidades de la aplicación
 
-1. Compile y ejecute la aplicación para observar su comportamiento actual.
+1. Para observar el comportamiento actual de la aplicación, compile y ejecute la aplicación.
 
-    Ejecute los siguientes comandos en una ventana de terminal:
+    Por ejemplo, puede abrir la ventana de terminal integrado de Visual Studio Code y ejecutar los siguientes comandos:
 
     ```bash
     cd ContosoShopEasy
@@ -228,11 +230,11 @@ Realice los pasos siguientes para completar esta tarea:
 
     La aplicación ejecuta una simulación del flujo de trabajo de comercio electrónico que expone vulnerabilidades de seguridad a través del registro detallado de la consola.
 
-1. Revise la salida de la consola.
+1. Tómese un minuto para revisar la salida de la consola.
 
-    Observe que la aplicación registra información confidencial, como contraseñas, números de tarjeta de crédito, credenciales de administrador y detalles internos del sistema. Esta salida es una prueba clara de los problemas de seguridad que se deben solucionar.
+    Observe que la aplicación registra información confidencial, como contraseñas, números de tarjeta de crédito, credenciales de administrador y detalles internos del sistema. Esta salida proporciona evidencia clara de las incidencias de seguridad que deben solucionarse.
 
-    > **NOTA**: La lógica de código y el registro en esta aplicación están diseñados para exponer vulnerabilidades de seguridad. Aunque la implementación se ha intentado, los registros resaltan los problemas de seguridad que son comunes en las aplicaciones reales.
+    > **NOTA**: Los comentarios del código, la lógica y el registro de esta aplicación están diseñados para ayudar a exponer las vulnerabilidades de seguridad. Aunque la implementación se ha inventado, los comentarios y los registros de salida resaltan las incidencias de seguridad que son comunes en las aplicaciones reales.
 
 1. Para comenzar un proceso de revisión que identifique las vulnerabilidades de seguridad en el código base, expanda la carpeta**Models** y abra el archivo**Order.cs**.
 
@@ -242,7 +244,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Expanda la carpeta**Security** y abra el archivo**SecurityValidator.cs**.
 
-1. Dedique un minuto a buscar las siguientes incidencias de seguridad:
+1. Tómese un minuto para encontrar las siguientes incidencias de seguridad:
 
     - Cerca de la parte superior del archivo, observe el comentario relacionado con las constantes de credenciales de administrador (líneas 7-9). Este código está relacionado con la incidencia "Eliminar las credenciales de administrador codificadas de forma rígida".
 
@@ -256,24 +258,27 @@ Realice los pasos siguientes para completar esta tarea:
 
     - Busque el método RunSecurityAudit y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Reducir la divulgación de información en los mensajes de error".
 
+    Varios de los métodos del archivo SecurityValidator.cs están relacionados con la incidencia "Eliminar los datos confidenciales del registro de depuración".
+
 1. Expanda la carpeta**Services** y abra el archivo**UserService.cs**.
 
-1. Dedique un minuto a buscar las siguientes incidencias de seguridad:
+1. Tómese un minuto para encontrar las siguientes incidencias de seguridad:
 
     - Busque los métodos RegisterUser, LoginUser y ValidateUserInput y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con las incidencias "Eliminar los datos confidenciales del registro de depuración".
+
     - Busque el método GetMd5Hash y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Reemplazar el hash de contraseña MD5 por alternativa segura".
 
 1. Abra el archivo**PaymentService.cs**.
 
 1. Dedique un minuto a revisar los comentarios que describen las vulnerabilidades de seguridad.
 
-    Este código está relacionado con la incidencia "Eliminar los datos confidenciales del registro de depuración".
+    Las vulnerabilidades de seguridad de este código están relacionadas con la incidencia "Eliminar los datos confidenciales del registro de depuración".
 
 1. Abra el archivo**ProductService.cs**.
 
 1. Dedique un minuto a revisar el método SearchProducts.
 
-    Este código está relacionado con la incidencia "Corregir la vulnerabilidad de inyección de código SQL en la búsqueda de productos".
+    Las vulnerabilidades de seguridad de este código están relacionadas con la incidencia "Corregir la vulnerabilidad de inyección de código SQL en la búsqueda de productos".
 
 ### Análisis de las incidencias con el modo Preguntar de GitHub Copilot
 
@@ -283,9 +288,17 @@ En esta tarea, usará el modo Preguntar de GitHub Copilot para analizar sistemá
 
 Realice los pasos siguientes para completar esta tarea:
 
-1. Abra la vista GitHub Copilot Chat y asegúrese de que el modo Preguntar esté seleccionado.
+1. Abra la vista Chat de GitHub Copilot y asegúrese de que está seleccionado el modo**Preguntar**.
 
-    Si la vista Chat aún no está abierta, seleccione el icono**Chat** situado en la parte superior de la ventana de Visual Studio Code. Compruebe que el modo de chat está establecido en**Preguntar** y que está usando el modelo**GPT-4.1**.
+    Si la vista Chat aún no está abierta, seleccione el icono**Chat** situado en la parte superior de la ventana de Visual Studio Code. Compruebe que el modo de chat está establecido en**Preguntar** y que usa el modelo**GPT-4.1**.
+
+    > **NOTA**: El modelo GPT-4.1 proporciona excelentes funcionalidades de análisis de código y se incluye con el plan Gratis de GitHub Copilot. Elegir un modelo diferente puede producir resultados diferentes.
+
+1. Asegúrese de que está empezando con una sesión de chat limpia.
+
+    Las sesiones de chat ayudan a organizar las interacciones con GitHub Copilot. Cada sesión mantiene su propio contexto, lo que le permite centrarse en tareas o incidencias concretas. El historial de conversaciones dentro de una sesión proporciona continuidad, lo que permite a GitHub Copilot basarse en interacciones anteriores para devolver respuestas más precisas y pertinentes. Esta conversación de chat se centrará en analizar y resolver vulnerabilidades de seguridad en la aplicación ContosoShopEasy. Después de completar el análisis de las incidencias de GitHub mediante el modo Preguntar de GitHub Copilot, puede usar la misma conversación para ayudar a implementar los cambios de código mediante el modo Agente de GitHub Copilot. GitHub Copilot puede usar el análisis detallado del modo Preguntar para informar a su generación de código en el modo Agente, lo que garantiza que las correcciones se alinean con las vulnerabilidades identificadas y las estrategias de corrección recomendadas.
+
+    Si es necesario, puede iniciar una nueva sesión de chat seleccionando el botón**Nuevo chat** (el icono**+** de la parte superior del panel Chat).
 
 1. Abra el archivo**ProductService.cs** y busque el método**SearchProducts**.
 
@@ -310,6 +323,8 @@ Realice los pasos siguientes para completar esta tarea:
     ```
 
 1. Dedique un minuto a revisar las sugerencias de corrección de GitHub Copilot.
+
+    Debería ver recomendaciones para usar consultas con parámetros o métodos ORM que ayudan a administrar los riesgos de inyección de código SQL. También puede ver sugerencias para las técnicas de validación y saneamiento de entrada. GitHub Copilot proporciona con frecuencia fragmentos de código que muestran cómo implementar sugerencias.
 
 1. Abra el archivo**UserService.cs** y busque el método**GetMd5Hash**.
 
@@ -519,9 +534,9 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Dedique un minuto a considerar la estrategia de corrección.
 
-    Según su análisis mediante el modo Preguntar de GitHub Copilot, planee su enfoque para abordar las vulnerabilidades de seguridad.
+    Cree un plan basado en el análisis que realizó con el modo Preguntar de GitHub Copilot. Tenga en cuenta el orden en el que abordará las incidencias, las dependencias entre correcciones y cómo comprobar que cada vulnerabilidad se ha corregido correctamente.
 
-    Las incidencias de GitHub, en orden, comenzando por la más crítica, son las siguientes:
+    Las incidencias de GitHub, comenzando por las más críticas y bajando según la prioridad, son las siguientes:
 
     1. 🔐 Corregir la vulnerabilidad de inyección de código SQL en la búsqueda de productos
     1. 🔐 Reemplazar el hash de contraseña MD5 por alternativa segura
@@ -544,17 +559,23 @@ Realice los pasos siguientes para completar esta tarea:
 
     La estrategia de corrección debe consistir en abordar cada incidencia sistemáticamente para garantizar así que las correcciones se implementan correctamente y de forma coherente.
 
-1. Cierre todos los archivos abiertos en el editor de código para empezar con un contexto limpio.
+    Para ahorrar tiempo durante este ejercicio de entrenamiento, resolverá todas las incidencias y, a continuación, confirmará todas las actualizaciones de código juntas. En este caso, se puede aplicar una estrategia de corrección basada en archivos. Sin embargo, el procesamiento de incidencias por lotes grandes no es un procedimiento recomendado.
+
+    En los entornos de producción, suele ser más conveniente solucionar cada incidencia individualmente con confirmaciones independientes. Este enfoque proporciona una mejor rastreabilidad, revisiones de código más fáciles y opciones de reversión más seguras si surgen problemas.
+
+1. Cierre todos los archivos abiertos en el editor de código.
+
+    Cerrar archivos ayuda al agente a centrarse en los archivos que agrega al contexto. Los archivos que se dejan abiertos en el editor de forma involuntaria pueden distraer de la tarea que se está realizando.
 
 1. Agregue el archivo**ProductService.cs** al contexto de chat.
 
-    La incidencia de inyección de código SQL está asociada al archivo ProductService.cs y al método SearchProducts en particular.
+    El problema de inyección de código SQL está asociado al método SearchProducts en el archivo ProductService.cs.
 
-1. Pida a GitHub Copilot que solucione primero la vulnerabilidad de inyección de código SQL.
+1. Pida a GitHub Copilot que solucione la vulnerabilidad de inyección de código SQL.
 
-    El análisis mediante el modo Preguntar de GitHub Copilot reveló que el método construye consultas SQL mediante la entrada de usuario sin un correcto saneamiento.
+    El análisis que completó con el modo Preguntar de GitHub Copilot reveló que el método construye consultas SQL mediante la entrada del usuario sin un correcto saneamiento. Use el análisis para crear instrucciones de tareas claras que el agente pueda usar para corregir la vulnerabilidad.
 
-    El análisis se puede usar para construir una instrucción clara para que el agente corrija la vulnerabilidad. Por ejemplo, puede asignar la siguiente tarea al agente:
+    Por ejemplo, puede asignar la siguiente tarea al agente:
 
     ```text
     Fix the SQL injection vulnerability in the SearchProducts method. Remove the simulated SQL query logging that demonstrates the vulnerability, and implement proper input sanitization to safely handle search terms. Ensure the method still functions correctly for legitimate searches while preventing malicious input.

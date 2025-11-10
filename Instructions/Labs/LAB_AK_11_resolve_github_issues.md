@@ -244,6 +244,8 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Expanda la carpeta**Security** y abra el archivo**SecurityValidator.cs**.
 
+    > **NOTA**: La clase SecurityValidator.cs está diseñada para centralizar la lógica relacionada con la seguridad para la aplicación ContosoShopEasy, lo que facilita la búsqueda, la administración y la resolución de incidencias de seguridad. En una aplicación real, se podría usar una clase como SecurityValidator para aplicar procedimientos recomendados de seguridad y validación de entrada. Sin embargo, la implementación específica en ContosoShopEasy es intencionadamente poco segura y se ha inventado para exponer las vulnerabilidades.
+
 1. Tómese un minuto para encontrar las siguientes incidencias de seguridad:
 
     - Cerca de la parte superior del archivo, observe el comentario relacionado con las constantes de credenciales de administrador (líneas 7-9). Este código está relacionado con la incidencia "Eliminar las credenciales de administrador codificadas de forma rígida".
@@ -254,11 +256,15 @@ Realice los pasos siguientes para completar esta tarea:
 
     - Busque el método ValidatePasswordStrength y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Reforzar los requisitos de seguridad de contraseñas".
 
+    - Busque el método ValidateCreditCard y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Corregir infracciones de almacenamiento de datos de tarjetas de crédito".
+
     - Busque el método GenerateSessionToken y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Corregir la generación de tokens de sesión predecibles".
 
-    - Busque el método RunSecurityAudit y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Reducir la divulgación de información en los mensajes de error".
+    - Busque el método RunSecurityAudit y revise los comentarios que describen las vulnerabilidades de seguridad. Este código está relacionado con la incidencia "Reducir la divulgación de información en los mensajes de error (salida de la consola)".
 
-    Varios de los métodos del archivo SecurityValidator.cs están relacionados con la incidencia "Eliminar los datos confidenciales del registro de depuración".
+    Varios de los métodos del archivo SecurityValidator.cs también están relacionados con la incidencia "Eliminar los datos confidenciales del registro de depuración".
+
+    Las incidencias expuestas por la clase SecurityValidator se encuentran normalmente distribuidas entre las clases de aplicaciones reales, especialmente los códigos base heredados o mal mantenidos.
 
 1. Expanda la carpeta**Services** y abra el archivo**UserService.cs**.
 
@@ -282,11 +288,41 @@ Realice los pasos siguientes para completar esta tarea:
 
 ### Análisis de las incidencias con el modo Preguntar de GitHub Copilot
 
-El modo Preguntar de GitHub Copilot proporciona funcionalidades de análisis de código inteligentes que pueden ayudar a identificar vulnerabilidades de seguridad, comprender su posible impacto y sugerir estrategias de corrección. Al analizar sistemáticamente cada problema de seguridad, puede desarrollar una comprensión completa de los problemas antes de implementar correcciones. Este enfoque garantiza que las soluciones aborden las causas principales en lugar de solo los síntomas.
+Las incidencias de GitHub suelen contener problemas complejos que requieren un análisis cuidadoso antes de implementar las correcciones. Comprender las causas principales, los posibles impactos y las mejores estrategias de corrección es fundamental para una resolución eficaz.
+
+Puede usar las siguientes extensiones de Visual Studio Code para ayudar con el análisis y la resolución de incidencias:
+
+- **GitHub Copilot Chat**: El modo Preguntar de GitHub Copilot proporciona funcionalidades de análisis de código inteligentes que pueden ayudar a identificar vulnerabilidades de seguridad, comprender su posible impacto y sugerir estrategias de corrección.
+
+- **Solicitudes de incorporación de cambios de GitHub**: la extensión Solicitudes de incorporación de cambios de GitHub integra las incidencias de GitHub directamente en Visual Studio Code, lo que le permite administrarlas e interactuar con ellas sin salir del entorno de desarrollo.
+
+Al analizar sistemáticamente cada problema de seguridad, puede desarrollar una comprensión completa de los problemas antes de implementar correcciones. Este enfoque garantiza que las soluciones aborden las causas principales en lugar de solo los síntomas.
 
 En esta tarea, usará el modo Preguntar de GitHub Copilot para analizar sistemáticamente las vulnerabilidades de seguridad.
 
 Realice los pasos siguientes para completar esta tarea:
+
+1. Abra la vista Extensiones en Visual Studio Code.
+
+    Para abrir la vista Extensiones, seleccione el icono**Extensiones** en la barra de actividades del lado izquierdo de la ventana de Visual Studio Code.
+
+1. En la vista Extensiones, busque "Solicitudes de incorporación de cambios de GitHub" e instale la extensión.
+
+    Esta extensión le permite revisar y administrar las solicitudes de incorporación de cambios y las incidencias de GitHub en Visual Studio Code.
+
+    Una vez finalizada la instalación, es posible que tenga que volver a cargar Visual Studio Code para que los cambios surtan efecto. Se debe agregar un icono de**GitHub** a la barra de actividad de Visual Studio Code.
+
+1. Para abrir la vista de solicitudes de incorporación de cambios de GitHub, seleccione el icono de**GitHub** en la barra de actividades.
+
+    Si se le solicita, inicie sesión en su cuenta de GitHub para conectar Visual Studio Code a los repositorios de GitHub.
+
+1. Observe las secciones**Solicitudes de incorporación de cambios** e**Incidencias** en la vista de GitHub.
+
+    La sección**Incidencias** permite ver y administrar las incidencias desde los repositorios de GitHub directamente en Visual Studio Code.
+
+1. Dedique un minuto a revisar la lista de incidencias que aparecen en la sección**Incidencias**.
+
+    Debería ver las mismas incidencias que ha revisado anteriormente en la interfaz web de GitHub.
 
 1. Abra la vista Chat de GitHub Copilot y asegúrese de que está seleccionado el modo**Preguntar**.
 
@@ -305,6 +341,8 @@ Realice los pasos siguientes para completar esta tarea:
 1. En el editor de código, seleccione todo el método**SearchProducts**.
 
     Al seleccionar código en el editor, el chat se centra en ese contexto. GitHub Copilot usa el código seleccionado para proporcionar análisis y recomendaciones pertinentes.
+
+    El método**SearchProducts** está asociado a la incidencia "Corregir vulnerabilidad de inyección de código SQL en la búsqueda de productos".
 
 1. Pida a GitHub Copilot que analice el código de vulnerabilidad de inyección de código SQL.
 
@@ -326,9 +364,23 @@ Realice los pasos siguientes para completar esta tarea:
 
     Debería ver recomendaciones para usar consultas con parámetros o métodos ORM que ayudan a administrar los riesgos de inyección de código SQL. También puede ver sugerencias para las técnicas de validación y saneamiento de entrada. GitHub Copilot proporciona con frecuencia fragmentos de código que muestran cómo implementar sugerencias.
 
-1. Abra el archivo**UserService.cs** y busque el método**GetMd5Hash**.
+1. Abra el archivo**UserService.cs**.
+
+1. Pida a GitHub Copilot que revise el archivo UserService.cs, que identifique las vulnerabilidades de seguridad y que luego enumere las incidencias de GitHub relacionadas.
+
+    Por ejemplo, puede enviar la siguiente indicación:
+
+    ```text
+    Review the UserService.cs file and identify the security vulnerabilities that are present in the code. Create a list the corresponding GitHub issues. Indicate the methods associated with each issue.
+    ```
+
+1. Dedique un minuto a revisar las respuestas de GitHub Copilot.
+
+1. En el editor de código, busque el método**GetMd5Hash**.
 
 1. En el editor de código, seleccione todo el método**GetMd5Hash**.
+
+    El método**GetMd5Hash** está asociado a la incidencia "Reemplazar el hash de contraseña MD5 por alternativa segura".
 
 1. Pida a GitHub Copilot que analice la vulnerabilidad de hash de contraseña no segura.
 
@@ -348,11 +400,13 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Dedique un minuto a revisar las sugerencias de corrección de GitHub Copilot.
 
+    GitHub Copilot debe proporcionar una comparación entre "PBKDF2" y "bcrypt". También debe proporcionar fragmentos de código que muestran cómo implementar el hash de contraseña segura mediante estos algoritmos y una lista de medidas de seguridad adicionales para el control de contraseñas.
+
 1. En el archivo**UserService.cs**, busque los métodos**RegisterUser** y**LoginUser**.
 
-    Estos métodos registran la información del usuario. El registro de información confidencial es una vulnerabilidad de seguridad.
-
 1. En el editor de código, seleccione ambos métodos.
+
+    Los métodos**RegisterUser** y**LoginUser** están asociados al problema "Eliminar los datos confidenciales del registro de depuración".
 
 1. Pida a GitHub Copilot que analice la vulnerabilidad de registro de datos confidenciales.
 
@@ -375,6 +429,8 @@ Realice los pasos siguientes para completar esta tarea:
 1. Abra el archivo**PaymentService.cs** y busque el método**ProcessPayment**.
 
 1. En el editor de código, seleccione todo el método**ProcessPayment**.
+
+    El método**ProcessPayment** está asociado a la incidencia "Eliminar los datos confidenciales del registro de depuración".
 
 1. Pida a GitHub Copilot que analice el registro de datos de pago confidenciales.
 

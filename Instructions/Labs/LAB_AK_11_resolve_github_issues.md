@@ -1,8 +1,8 @@
-<!-- ---
+---
 lab:
-    title: 'Exercise - Resolve GitHub issues using GitHub Copilot'
-    description: 'Learn how to identify and address performance bottlenecks and code inefficiencies using GitHub Copilot tools.'
---- -->
+  title: "Ejercicio: Resolución de incidencias de GitHub con GitHub\_Copilot"
+  description: "Obtenga información sobre cómo identificar y resolver vulnerabilidades de seguridad de código mediante GitHub Copilot en Visual\_Studio Code."
+---
 
 # Resolución de incidencias de GitHub con GitHub Copilot
 
@@ -16,7 +16,7 @@ Este ejercicio debería tardar en completarse **40** minutos aproximadamente.
 
 ## Antes de comenzar
 
-El entorno de laboratorio debe incluir lo siguiente: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
+El entorno de laboratorio debe incluir los siguientes recursos: Git 2.48 o posterior, SDK de .NET 9.0 o posterior, Visual Studio Code con la extensión Kit de desarrollo de C# y acceso a una cuenta de GitHub con GitHub Copilot habilitado.
 
 Si usa un equipo local como entorno de laboratorio para este ejercicio:
 
@@ -124,7 +124,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 ### Revisión de las incidencias en GitHub
 
-Las incidencias de GitHub sirven como un sistema de seguimiento centralizado para errores, vulnerabilidades de seguridad y solicitudes de mejora. Cada incidencia proporciona contexto sobre el problema, su gravedad y el posible impacto en la aplicación. Comprender estas incidencias antes de profundizar en el código ayuda a establecer prioridades y garantiza una corrección completa.
+Las incidencias de GitHub sirven como un sistema de seguimiento centralizado para errores, vulnerabilidades de seguridad y solicitudes de mejora. Cada incidencia proporciona contexto sobre el problema, su gravedad y los posibles efectos en la aplicación. Comprender estas incidencias antes de profundizar en el código ayuda a establecer prioridades y garantiza una corrección completa.
 
 En esta tarea, revisará las incidencias de GitHub y examinará las vulnerabilidades de seguridad que deben solucionarse.
 
@@ -132,7 +132,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Seleccione la pestaña **Incidencias** del repositorio y, a continuación, dedique un minuto a revisar la página de incidencias.
 
-    Debería ver 10 incidencias abiertas. Tenga en cuenta lo siguiente:
+    Debería ver una lista con 10 incidencias abiertas. Observe los detalles siguientes sobre las incidencias:
 
     - Todas las incidencias están etiquetadas como errores.
     - Todas las incidencias tienen un nivel de prioridad.
@@ -248,7 +248,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Desplácese hacia abajo hasta encontrar la clase **PaymentInfo**.
 
-    Observe los comentarios relativos a las propiedades CardNumber y CVV. Este código está relacionado con la incidencia **Corregir infracciones de almacenamiento de datos de tarjetas de crédito** que se ha asignado a usted mismo.
+    Observe los comentarios relativos a las propiedades CardNumber y Código de validación de tarjeta (CVV). Este código está relacionado con la incidencia **Corregir infracciones de almacenamiento de datos de tarjetas de crédito** que se ha asignado a usted mismo.
 
 1. Expanda la carpeta **Security** y abra el archivo **SecurityValidator.cs**.
 
@@ -274,7 +274,7 @@ Realice los pasos siguientes para completar esta tarea:
 
     Varios de los métodos del archivo SecurityValidator.cs también están relacionados con la incidencia "Eliminar los datos confidenciales del registro de depuración".
 
-    Las incidencias expuestas por la clase SecurityValidator se encuentran normalmente distribuidas entre las clases de aplicaciones reales, especialmente los códigos base heredados o mal mantenidos.
+    Las incidencias expuestas por la clase SecurityValidator se encuentran normalmente distribuidas entre las clases de aplicaciones reales, especialmente códigos base heredados o mantenidos de manera incorrecta.
 
 1. Expanda la carpeta **Services** y abra el archivo **UserService.cs**.
 
@@ -326,7 +326,7 @@ Las incidencias de GitHub suelen contener problemas complejos que requieren un a
 
 Las siguientes extensiones de GitHub para Visual Studio Code pueden ayudarle a analizar las incidencias de GitHub:
 
-- **GitHub Copilot Chat**: El modo Preguntar de GitHub Copilot proporciona funcionalidades de análisis de código inteligentes que pueden ayudar a identificar vulnerabilidades de seguridad, comprender su posible impacto y sugerir estrategias de corrección.
+- **GitHub Copilot Chat**: El modo Preguntar de GitHub Copilot proporciona funcionalidades de análisis de código inteligentes que pueden ayudar a identificar vulnerabilidades de seguridad, comprender sus posibles efectos y sugerir estrategias de corrección.
 
 - **Solicitudes de incorporación de cambios de GitHub**: la extensión Solicitudes de incorporación de cambios de GitHub integra las incidencias de GitHub directamente en Visual Studio Code, lo que le permite administrarlas e interactuar con ellas sin salir del entorno de desarrollo.
 
@@ -348,7 +348,7 @@ Realice los pasos siguientes para completar esta tarea:
 
     1. Seleccione **Solicitudes de incorporación de cambios de GitHub** en los resultados de búsqueda y, a continuación, instale la extensión.
 
-        Una vez finalizada la instalación, es posible que tenga que volver a cargar Visual Studio Code para que los cambios surtan efecto. Se debe agregar un icono de **GitHub** a la barra de actividad de Visual Studio Code.
+        Una vez que finalice la instalación, es posible que tenga que volver a cargar Visual Studio Code para que los cambios surtan efecto. Se debe agregar un icono de **GitHub** a la barra de actividad de Visual Studio Code.
 
 1. Para abrir la vista de solicitudes de incorporación de cambios de GitHub, seleccione el icono de **GitHub** en la barra de actividades.
 
@@ -376,7 +376,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Asegúrese de que empieza con una sesión de chat limpia.
 
-    Las sesiones de chat ayudan a organizar las interacciones con GitHub Copilot. Cada sesión mantiene su propio contexto, lo que le permite centrarse en tareas o incidencias concretas. El historial de conversaciones dentro de una sesión proporciona continuidad, lo que permite a GitHub Copilot basarse en interacciones anteriores para devolver respuestas más precisas y pertinentes. Esta conversación de chat se centrará en analizar y resolver las dos vulnerabilidades de seguridad que tiene asignadas en la aplicación ContosoShopEasy. Después de completar el análisis de las incidencias de GitHub mediante el modo Preguntar de GitHub Copilot, puede usar la misma conversación para ayudar a implementar los cambios de código mediante el modo Agente de GitHub Copilot. GitHub Copilot puede usar el análisis detallado del modo Preguntar para informar a su generación de código en el modo Agente, lo que garantiza que las correcciones se alinean con las vulnerabilidades identificadas y las estrategias de corrección recomendadas.
+    Las sesiones de chat ayudan a organizar las interacciones con GitHub Copilot. Cada sesión mantiene su propio contexto, lo que le permite centrarse en tareas o incidencias concretas. El historial de conversaciones dentro de una sesión proporciona continuidad, lo que permite a GitHub Copilot basarse en interacciones anteriores para devolver respuestas más precisas y pertinentes. Esta conversación de chat se centra en analizar y resolver las dos vulnerabilidades de seguridad que tiene asignadas en la aplicación ContosoShopEasy. Después de completar el análisis de las incidencias de GitHub mediante el modo Preguntar de GitHub Copilot, puede usar la misma conversación para ayudar a implementar los cambios de código mediante el modo Agente de GitHub Copilot. GitHub Copilot puede usar el análisis detallado del modo Preguntar para informar a su generación de código en el modo Agente, lo que garantiza que las correcciones se alinean con las vulnerabilidades identificadas y las estrategias de corrección recomendadas.
 
     Si es necesario, puede iniciar una nueva sesión de chat seleccionando el botón **Nuevo chat** (el icono **+** de la parte superior del panel Chat).
 
@@ -414,7 +414,7 @@ Siga estos pasos para analizar la vulnerabilidad de inyección de código SQL:
 
 1. Dedique un minuto a revisar las sugerencias de corrección de GitHub Copilot.
 
-    Debería ver recomendaciones para usar consultas con parámetros o métodos ORM que ayudan a administrar los riesgos de inyección de código SQL. También puede ver sugerencias para las técnicas de validación y saneamiento de entrada. GitHub Copilot proporciona con frecuencia fragmentos de código que muestran cómo implementar sugerencias.
+    Debería ver recomendaciones para usar consultas con parámetros o métodos de Asignación relacional de objetos (ORM) que ayudan a administrar los riesgos de inyección de código SQL. También puede ver sugerencias para las técnicas de validación y saneamiento de entrada. GitHub Copilot proporciona con frecuencia fragmentos de código que muestran cómo implementar sugerencias.
 
 1. Abra el archivo **ProductRepository.cs** en la carpeta **Datos** y busque el método **SearchProducts**.
 
@@ -456,7 +456,7 @@ Siga estos pasos para analizar las infracciones de almacenamiento de datos de ta
 
 1. En el editor de código, seleccione las propiedades **CardNumber** y **CVV** dentro de la clase **PaymentInfo**.
 
-    Observe los comentarios que indican que estas propiedades son vulnerabilidades de seguridad. El almacenamiento de los números de tarjeta completos y de los códigos CVV infringe los requisitos de cumplimiento de PCI DSS.
+    Observe los comentarios que indican que estas propiedades son vulnerabilidades de seguridad. El almacenamiento de números de tarjeta completos y códigos CVV infringe los requisitos de cumplimiento del Estándar de seguridad de datos para el sector de las tarjetas de pago (PCI DSS).
 
 1. Pida a GitHub Copilot que analice las infracciones de almacenamiento de datos de tarjetas de crédito.
 
@@ -508,7 +508,7 @@ Siga estos pasos para analizar las infracciones de almacenamiento de datos de ta
     How should I modify the ProcessPayment method to handle credit card data securely? What changes are needed to prevent storing and logging sensitive card information?
     ```
 
-1. Abra el archivo **SecurityValidator.cs** y busque el método **ValidateCreditCard**.
+1. Abra el archivo **SecurityValidator.cs** y, después, busque el método **ValidateCreditCard**.
 
 1. En el editor de código, seleccione todo el método **ValidateCreditCard**.
 
@@ -530,9 +530,9 @@ Siga estos pasos para analizar las infracciones de almacenamiento de datos de ta
 
 1. Revise el archivo para determinar si controla los objetos PaymentInfo.
 
-    Observe que la clase OrderRepository almacena objetos Order, que incluyen PaymentInfo. Si la clase PaymentInfo almacena los números de tarjeta completos y los códigos CVV, el repositorio conservará esta información confidencial.
+    Observe que la clase OrderRepository almacena objetos Order, que incluyen PaymentInfo. Si la clase PaymentInfo almacena los números de tarjeta completos y los códigos CVV, el repositorio conserva estos datos confidenciales.
 
-1. Pida a GitHub Copilot que analice el impacto de OrderRepository en el almacenamiento de datos de tarjetas de crédito.
+1. Pida a GitHub Copilot que analice los efectos de OrderRepository en el almacenamiento de datos de tarjetas de crédito.
 
     Por ejemplo, puede enviar la siguiente indicación:
 
@@ -542,7 +542,7 @@ Siga estos pasos para analizar las infracciones de almacenamiento de datos de ta
 
 1. Revise el análisis de GitHub Copilot.
 
-    GitHub Copilot debe explicar que el repositorio conserva los datos que se encuentra en los objetos Order y PaymentInfo. Si el modelo PaymentInfo se fija para almacenar solo datos seguros (tokens, últimos 4 dígitos), el repositorio almacenará automáticamente datos seguros en su lugar.
+    GitHub Copilot debe explicar que el repositorio conserva los datos que se encuentra en los objetos Order y PaymentInfo. Si el modelo PaymentInfo se fija para almacenar solo datos seguros (tokens, últimos cuatro dígitos), el repositorio almacena automáticamente datos seguros en su lugar.
 
 1. Cierre el archivo OrderRepository.cs.
 
@@ -560,7 +560,7 @@ Siga estos pasos para analizar las infracciones de almacenamiento de datos de ta
 
 ### Resolución de incidencias con el modo Agente de GitHub Copilot
 
-El modo Agente de GitHub Copilot permite la implementación autónoma de correcciones de seguridad complejas en varios archivos y métodos. A diferencia del modo Preguntar, que proporciona análisis y recomendaciones, el modo Agente puede modificar directamente el código para implementar mejoras de seguridad. Este enfoque es especialmente eficaz para la corrección sistemática de la seguridad, donde es necesario abordar de forma coherente varias vulnerabilidades relacionadas.
+El modo Agente de GitHub Copilot permite la implementación autónoma de correcciones de seguridad complejas en varios archivos y métodos. A diferencia del modo Preguntar, que proporciona análisis y recomendaciones, el modo Agente puede modificar directamente el código para implementar mejoras de seguridad. Este enfoque es eficaz para la corrección sistemática de la seguridad, donde es necesario abordar de forma coherente varias vulnerabilidades relacionadas.
 
 En esta tarea, usará el modo Agente de GitHub Copilot para corregir las incidencias de GitHub que tiene asignadas.
 
@@ -572,14 +572,14 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Dedique un minuto a considerar la estrategia de corrección.
 
-    Cree una estrategia de corrección basada en el análisis que realizó con el modo Preguntar de GitHub Copilot. Tenga en cuenta el orden en el que abordará las incidencias asignadas, el enfoque para resolver las incidencias y cómo comprobar que las vulnerabilidades de código se han corregido correctamente.
+    Cree una estrategia de corrección basada en el análisis que ha completado con el modo Preguntar de GitHub Copilot. Tenga en cuenta el orden en el que abordará las incidencias asignadas, el enfoque para resolver las incidencias y cómo comprobar que las vulnerabilidades de código se han corregido correctamente.
 
     Las dos incidencias de GitHub asignadas son:
 
     1. 🔐 Corrección de la vulnerabilidad de inyección de código SQL en la búsqueda de productos (prioridad alta)
     1. 🔐 Corrección de las infracciones de almacenamiento de datos de tarjetas de crédito (prioridad crítica)
 
-    Aunque la incidencia de almacenamiento de tarjetas de crédito tiene una gravedad mayor, la incidencia de inyección de código SQL es más sencilla de corregir y se puede solucionar primero. Esto le permite validar el flujo de trabajo con una corrección más sencilla antes de abordar las infracciones de almacenamiento de tarjetas de crédito más complejas.
+    Aunque la incidencia de almacenamiento de tarjetas de crédito tiene una gravedad mayor, la incidencia de inyección de código SQL es más sencilla de corregir y se puede solucionar primero. Este enfoque le permite validar el flujo de trabajo con una corrección más sencilla antes de abordar las infracciones de almacenamiento de tarjetas de crédito más complejas.
 
     Estas incidencias están asociados a archivos y métodos específicos en el código base:
 
@@ -612,7 +612,7 @@ Siga estos pasos para resolver la vulnerabilidad de inyección de código SQL:
 
 1. Supervise el progreso del agente.
 
-    El agente modificará el código para quitar el registro vulnerable e implementará un control de entrada más seguro.
+    El agente modifica el código para quitar el registro vulnerable e implementar un control de entrada más seguro.
 
 1. Dedique un minuto a revisar los cambios propuestos y, a continuación, seleccione **Mantener** en la vista Chat.
 
@@ -634,7 +634,7 @@ Siga estos pasos para resolver la vulnerabilidad de inyección de código SQL:
 
 #### Resolución de las infracciones de almacenamiento de datos de tarjetas de crédito
 
-Las infracciones de almacenamiento de datos de tarjetas de crédito abarcan varios archivos y requieren cambios coordinados. Deberá modificar el modelo de datos, actualizar los servicios que controlan los datos de pago y eliminar los datos confidenciales de los registros.
+Las infracciones de almacenamiento de datos de tarjetas de crédito abarcan varios archivos y requieren cambios coordinados. Debe modificar el modelo de datos, actualizar los servicios que controlan los datos de pago y eliminar los datos confidenciales de los registros.
 
 Siga estos pasos para resolver las infracciones de almacenamiento de datos de tarjetas de crédito:
 
@@ -700,7 +700,7 @@ Siga estos pasos para resolver las infracciones de almacenamiento de datos de ta
 
 1. Tenga en cuenta el impacto en OrderRepository.
 
-    El archivo OrderRepository.cs almacena objetos Order, que incluyen PaymentInfo. Puesto que ha actualizado la clase PaymentInfo para almacenar solo datos seguros (últimos 4 dígitos, tipo de tarjeta), el repositorio conservará automáticamente datos seguros en lugar de números de tarjeta completos y códigos CVV. No se necesitan cambios directos en el repositorio, pero debe comprobarlo durante las pruebas.
+    El archivo OrderRepository.cs almacena objetos Order, que incluyen PaymentInfo. Ha actualizado la clase PaymentInfo para almacenar solo los datos seguros (últimos cuatro dígitos, tipo de tarjeta). Como resultado, el repositorio conserva automáticamente datos seguros en lugar de números de tarjeta completos y códigos CVV. No se necesitan cambios directos en el repositorio, pero debe comprobar la seguridad de los datos durante las pruebas.
 
 1. Compile la aplicación para asegurarse de que todos los cambios se compilen correctamente.
 
@@ -731,7 +731,7 @@ Realice los pasos siguientes para completar esta tarea:
     dotnet run
     ```
 
-    Compare la salida con las notas de la ejecución de la aplicación original. Debería ver que se registra información significativamente menos confidencial.
+    Compare la salida con las notas de la ejecución de la aplicación original. Debería ver que se registra información menos confidencial.
 
 1. Pruebe la corrección de inyección de código SQL.
 
@@ -746,7 +746,7 @@ Realice los pasos siguientes para completar esta tarea:
 
     Compruebe que la clase PaymentInfo y el código relacionado ya no almacenen ni registren números completos de tarjetas de crédito ni códigos CVV. La aplicación debe:
 
-    - No registrar números completos de tarjetas de crédito (compruebe si hay enmascaramiento, por ejemplo, ***1234).
+    - No registrar números completos de tarjetas de crédito (compruebe si hay enmascaramiento, por ejemplo, ****1234)
     - No registrar en absoluto códigos CVV.
     - No almacenar códigos CVV en el objeto PaymentInfo.
     - Almacenar solo los últimos 4 dígitos de los números de tarjetas.
@@ -774,7 +774,7 @@ Realice los pasos siguientes para completar esta tarea:
 
 1. Abra la vista de control de código fuente de Visual Studio Code y revise los cambios realizados en cada uno de los archivos actualizados.
 
-    Busque los cambios inesperados que se puedan haber introducido durante el proceso de corrección. Asegúrese de que todos los cambios se alineen con la estrategia de corrección y que no se hayan introducido nuevas vulnerabilidades.
+    Busque cambios inesperados introducidos durante el proceso de corrección. Asegúrese de que todos los cambios se alineen con la estrategia de corrección y que no se hayan introducido nuevas vulnerabilidades.
 
 1. Pida a GitHub Copilot que cree un mensaje de confirmación completo.
 

@@ -1,3 +1,5 @@
+**⚠️ This GitHub repo will retire on 28th November 2025.** 
+
 # Ejercicios del laboratorio de Microsoft
 <!-- Change the title above as appropriate -->
 
